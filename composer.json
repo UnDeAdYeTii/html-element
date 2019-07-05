@@ -1,0 +1,36 @@
+{
+    "name": "yetii/hmtlelement",
+    "description": "Generates HTML (elements) based on a schematic",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "UnDeAd-YeTii",
+            "email": "bradietilley97@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "nette/neon": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "YeTii\\HtmlElement\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YeTii\\HtmlElement\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
