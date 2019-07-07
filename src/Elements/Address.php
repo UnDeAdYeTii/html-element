@@ -10,10 +10,6 @@ class Address extends Element
 
     protected $name = 'address';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

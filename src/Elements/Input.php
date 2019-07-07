@@ -4,15 +4,14 @@ namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
 use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Input extends Element
 {
 
-    protected $name = 'input';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'input';
 
     protected $availableAttributes = [
         'accesskey',

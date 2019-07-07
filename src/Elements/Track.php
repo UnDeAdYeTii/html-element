@@ -3,16 +3,14 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Track extends Element
 {
 
-    protected $name = 'track';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'track';
 
     protected $availableAttributes = [
         'accesskey',

@@ -10,10 +10,6 @@ class Header extends Element
 
     protected $name = 'header';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

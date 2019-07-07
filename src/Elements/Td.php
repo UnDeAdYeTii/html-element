@@ -10,10 +10,6 @@ class Td extends Element
 
     protected $name = 'td';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

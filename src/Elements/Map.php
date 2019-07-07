@@ -10,10 +10,6 @@ class Map extends Element
 
     protected $name = 'map';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

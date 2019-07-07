@@ -10,10 +10,6 @@ class Dd extends Element
 
     protected $name = 'dd';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

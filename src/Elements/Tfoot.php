@@ -10,10 +10,6 @@ class Tfoot extends Element
 
     protected $name = 'tfoot';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

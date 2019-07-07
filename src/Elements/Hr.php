@@ -3,16 +3,14 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Hr extends Element
 {
 
-    protected $name = 'hr';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'hr';
 
     protected $availableAttributes = [
         'accesskey',

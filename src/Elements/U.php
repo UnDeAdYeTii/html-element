@@ -10,10 +10,6 @@ class U extends Element
 
     protected $name = 'u';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

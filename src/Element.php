@@ -3,6 +3,9 @@
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\TextNode;
+use YeTii\HtmlElement\Traits\HasTextChild;
+use YeTii\HtmlElement\Traits\IsSingleton;
+use YeTii\HtmlElement\Traits\IsTextNode;
 
 class Element
 {
@@ -14,14 +17,6 @@ class Element
      * @var string
      */
     protected $name;
-
-    /**
-     * Properties of this Element. Think of them as traits except these
-     * only alter how the Element is rendered (thus not real traits).
-     *
-     * @var array
-     */
-    protected $markup = [];
 
     /**
      * List of current attributes for this Element
@@ -191,7 +186,7 @@ class Element
      */
     public function render(): string
     {
-        if ($this->isMarkup(Schema::TEXT_NODE)) {
+        if ($this->hasTrait(IsTextNode::class)) {
             $html = implode('', $this->children);
             
             if ($this->escapeHtml) {
@@ -200,6 +195,7 @@ class Element
 
             return $html;
         }
+        
 
         $html = [
             '<' . $this->name
@@ -227,7 +223,7 @@ class Element
 EOL;
         }
 
-        if ($this->isMarkup(Schema::SINGLETON)) {
+        if ($this->hasTrait(IsSingleton::class)) {
             $html[] = ' />';
         } else {
             $html[] = '>';
@@ -257,22 +253,11 @@ EOL;
 
         $html = implode('', $html);
 
-        if ($this->isMarkup(Schema::TEXT_CHILD) && $this->escapeHtml) {
+        if ($this->hasTrait(HasTextChild::class) && $this->escapeHtml) {
             $html = htmlspecialchars($html);
         }
 
         return $html;
-    }
-
-    /**
-     * Determine if an element is a certain type of markup
-     * 
-     * @param $markup The Schema const (e.g. Schema::SINGLETON)
-     * @return bool
-     */
-    public function isMarkup(int $markup): bool
-    {
-        return in_array($markup, $this->markup);
     }
 
     /**
@@ -297,7 +282,7 @@ EOL;
             // Then find all child text nodes and apply the same logic
             foreach ($this->children as $child) {
                 if (is_object($child)) {
-                    if ($child->isMarkup(Schema::TEXT_NODE)) {
+                    if ($this->hasTrait(IsTextNode::class)) {
                         // .. unless it's been explicitly set to false
                         $child->escapeHtml(true, true);
                     }
@@ -306,5 +291,9 @@ EOL;
         }
 
         return $this;
+    }
+
+    function hasTrait($trait) {
+        return in_array($trait, array_keys(class_uses($this)));
     }
 }

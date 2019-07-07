@@ -10,10 +10,6 @@ class Dl extends Element
 
     protected $name = 'dl';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

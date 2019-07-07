@@ -10,10 +10,6 @@ class Li extends Element
 
     protected $name = 'li';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

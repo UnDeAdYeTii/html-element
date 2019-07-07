@@ -10,10 +10,6 @@ class Small extends Element
 
     protected $name = 'small';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

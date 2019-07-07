@@ -3,16 +3,14 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Embed extends Element
 {
 
-    protected $name = 'embed';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'embed';
 
     protected $availableAttributes = [
         'accesskey',

@@ -10,10 +10,6 @@ class Footer extends Element
 
     protected $name = 'footer';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

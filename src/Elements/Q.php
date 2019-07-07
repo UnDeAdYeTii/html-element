@@ -10,10 +10,6 @@ class Q extends Element
 
     protected $name = 'q';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

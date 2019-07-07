@@ -10,10 +10,6 @@ class Menu extends Element
 
     protected $name = 'menu';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

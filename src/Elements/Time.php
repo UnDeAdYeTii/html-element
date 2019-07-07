@@ -10,10 +10,6 @@ class Time extends Element
 
     protected $name = 'time';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

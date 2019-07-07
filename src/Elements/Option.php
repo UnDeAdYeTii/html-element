@@ -10,10 +10,6 @@ class Option extends Element
 
     protected $name = 'option';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -3,16 +3,14 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Command extends Element
 {
 
-    protected $name = 'command';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'command';
 
     protected $availableAttributes = [
         'accesskey',

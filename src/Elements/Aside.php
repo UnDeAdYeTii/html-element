@@ -10,10 +10,6 @@ class Aside extends Element
 
     protected $name = 'aside';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

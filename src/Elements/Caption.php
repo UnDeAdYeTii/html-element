@@ -10,10 +10,6 @@ class Caption extends Element
 
     protected $name = 'caption';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

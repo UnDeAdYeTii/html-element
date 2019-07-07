@@ -3,16 +3,14 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Wbr extends Element
 {
 
-    protected $name = 'wbr';
+    use IsSingleton;
 
-    protected $markup = [
-        Schema::SINGLETON
-    ];
+    protected $name = 'wbr';
 
     protected $availableAttributes = [
         'accesskey',

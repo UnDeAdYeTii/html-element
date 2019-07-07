@@ -10,10 +10,6 @@ class Mark extends Element
 
     protected $name = 'mark';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Meter extends Element
 
     protected $name = 'meter';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

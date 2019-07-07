@@ -10,10 +10,6 @@ class Ol extends Element
 
     protected $name = 'ol';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

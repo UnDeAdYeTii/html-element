@@ -10,10 +10,6 @@ class Output extends Element
 
     protected $name = 'output';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

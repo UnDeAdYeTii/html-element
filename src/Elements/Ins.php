@@ -10,10 +10,6 @@ class Ins extends Element
 
     protected $name = 'ins';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

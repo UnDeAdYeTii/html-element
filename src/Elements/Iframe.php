@@ -10,10 +10,6 @@ class Iframe extends Element
 
     protected $name = 'iframe';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

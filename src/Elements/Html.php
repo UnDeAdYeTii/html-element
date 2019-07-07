@@ -10,10 +10,6 @@ class Html extends Element
 
     protected $name = 'html';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

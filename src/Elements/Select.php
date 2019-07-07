@@ -10,10 +10,6 @@ class Select extends Element
 
     protected $name = 'select';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

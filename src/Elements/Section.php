@@ -10,10 +10,6 @@ class Section extends Element
 
     protected $name = 'section';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

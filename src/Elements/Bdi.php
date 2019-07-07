@@ -10,10 +10,6 @@ class Bdi extends Element
 
     protected $name = 'bdi';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

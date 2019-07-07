@@ -10,10 +10,6 @@ class Span extends Element
 
     protected $name = 'span';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

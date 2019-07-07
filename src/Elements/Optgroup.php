@@ -10,10 +10,6 @@ class Optgroup extends Element
 
     protected $name = 'optgroup';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Audio extends Element
 
     protected $name = 'audio';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

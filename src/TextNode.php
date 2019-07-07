@@ -3,22 +3,17 @@
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsTextNode;
 
 class TextNode extends Element
 {
 
-    /**
-     * @inheritDoc
-     */
-    protected $name = 'TEXT NODE';
+    use IsTextNode;
 
     /**
      * @inheritDoc
      */
-    protected $markup = [
-        Schema::TEXT_NODE
-    ];
+    protected $name = '#text';
 
     /**
      * @inheritDoc

@@ -10,10 +10,6 @@ class Label extends Element
 
     protected $name = 'label';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

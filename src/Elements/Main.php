@@ -10,10 +10,6 @@ class Main extends Element
 
     protected $name = 'main';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

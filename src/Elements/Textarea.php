@@ -10,10 +10,6 @@ class Textarea extends Element
 
     protected $name = 'textarea';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

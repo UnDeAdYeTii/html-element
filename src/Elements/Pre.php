@@ -10,10 +10,6 @@ class Pre extends Element
 
     protected $name = 'pre';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

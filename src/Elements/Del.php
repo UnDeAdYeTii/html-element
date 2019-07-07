@@ -10,10 +10,6 @@ class Del extends Element
 
     protected $name = 'del';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Th extends Element
 
     protected $name = 'th';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

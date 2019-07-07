@@ -10,10 +10,6 @@ class Fieldset extends Element
 
     protected $name = 'fieldset';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Figcaption extends Element
 
     protected $name = 'figcaption';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

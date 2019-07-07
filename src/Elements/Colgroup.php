@@ -10,10 +10,6 @@ class Colgroup extends Element
 
     protected $name = 'colgroup';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

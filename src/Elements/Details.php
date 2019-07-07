@@ -10,10 +10,6 @@ class Details extends Element
 
     protected $name = 'details';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

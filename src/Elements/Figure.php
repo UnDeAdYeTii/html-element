@@ -10,10 +10,6 @@ class Figure extends Element
 
     protected $name = 'figure';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

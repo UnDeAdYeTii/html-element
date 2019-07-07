@@ -10,10 +10,6 @@ class Sub extends Element
 
     protected $name = 'sub';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

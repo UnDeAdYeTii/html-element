@@ -10,10 +10,6 @@ class Rt extends Element
 
     protected $name = 'rt';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

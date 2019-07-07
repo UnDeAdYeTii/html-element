@@ -10,10 +10,6 @@ class Article extends Element
 
     protected $name = 'article';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

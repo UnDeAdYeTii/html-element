@@ -10,10 +10,6 @@ class Body extends Element
 
     protected $name = 'body';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

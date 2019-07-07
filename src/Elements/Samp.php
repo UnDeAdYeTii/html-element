@@ -10,10 +10,6 @@ class Samp extends Element
 
     protected $name = 'samp';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

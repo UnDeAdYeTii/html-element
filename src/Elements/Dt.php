@@ -10,10 +10,6 @@ class Dt extends Element
 
     protected $name = 'dt';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

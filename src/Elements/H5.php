@@ -10,10 +10,6 @@ class H5 extends Element
 
     protected $name = 'h5';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

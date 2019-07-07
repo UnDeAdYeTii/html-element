@@ -10,10 +10,6 @@ class Abbr extends Element
 
     protected $name = 'abbr';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

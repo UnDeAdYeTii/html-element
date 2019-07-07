@@ -10,10 +10,6 @@ class Strong extends Element
 
     protected $name = 'strong';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

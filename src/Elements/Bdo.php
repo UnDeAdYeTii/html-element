@@ -10,10 +10,6 @@ class Bdo extends Element
 
     protected $name = 'bdo';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

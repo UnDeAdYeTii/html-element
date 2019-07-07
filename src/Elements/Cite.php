@@ -10,10 +10,6 @@ class Cite extends Element
 
     protected $name = 'cite';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

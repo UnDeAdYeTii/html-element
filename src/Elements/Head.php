@@ -10,10 +10,6 @@ class Head extends Element
 
     protected $name = 'head';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

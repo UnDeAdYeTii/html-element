@@ -10,10 +10,6 @@ class Kbd extends Element
 
     protected $name = 'kbd';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Dfn extends Element
 
     protected $name = 'dfn';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

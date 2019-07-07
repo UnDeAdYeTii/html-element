@@ -8,10 +8,6 @@ use YeTii\HtmlElement\Schema;
 class Div extends Element
 {
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -3,16 +3,13 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Traits\IsSingleton;
 
 class Area extends Element
 {
+    use IsSingleton;
 
     protected $name = 'area';
-
-    protected $markup = [
-        Schema::SINGLETON
-    ];
 
     protected $availableAttributes = [
         'accesskey',

@@ -10,10 +10,6 @@ class Legend extends Element
 
     protected $name = 'legend';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

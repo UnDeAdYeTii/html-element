@@ -10,10 +10,6 @@ class Rp extends Element
 
     protected $name = 'rp';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Ruby extends Element
 
     protected $name = 'ruby';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

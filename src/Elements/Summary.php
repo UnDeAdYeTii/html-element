@@ -10,10 +10,6 @@ class Summary extends Element
 
     protected $name = 'summary';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Button extends Element
 
     protected $name = 'button';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

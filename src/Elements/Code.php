@@ -10,10 +10,6 @@ class Code extends Element
 
     protected $name = 'code';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Tbody extends Element
 
     protected $name = 'tbody';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Video extends Element
 
     protected $name = 'video';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

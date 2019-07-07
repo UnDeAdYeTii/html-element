@@ -10,10 +10,6 @@ class Thead extends Element
 
     protected $name = 'thead';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

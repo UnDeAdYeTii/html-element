@@ -10,10 +10,6 @@ class Object extends Element
 
     protected $name = 'object';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

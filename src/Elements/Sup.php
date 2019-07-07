@@ -10,10 +10,6 @@ class Sup extends Element
 
     protected $name = 'sup';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

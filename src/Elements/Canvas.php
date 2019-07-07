@@ -10,10 +10,6 @@ class Canvas extends Element
 
     protected $name = 'canvas';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

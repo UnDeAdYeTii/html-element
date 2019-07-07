@@ -10,10 +10,6 @@ class Table extends Element
 
     protected $name = 'table';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

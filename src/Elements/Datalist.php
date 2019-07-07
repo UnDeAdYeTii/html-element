@@ -10,10 +10,6 @@ class Datalist extends Element
 
     protected $name = 'datalist';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

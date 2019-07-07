@@ -10,10 +10,6 @@ class Form extends Element
 
     protected $name = 'form';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

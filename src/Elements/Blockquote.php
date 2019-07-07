@@ -10,10 +10,6 @@ class Blockquote extends Element
 
     protected $name = 'blockquote';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Var extends Element
 
     protected $name = 'var';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

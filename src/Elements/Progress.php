@@ -10,10 +10,6 @@ class Progress extends Element
 
     protected $name = 'progress';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

@@ -10,10 +10,6 @@ class Nav extends Element
 
     protected $name = 'nav';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

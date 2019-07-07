@@ -10,10 +10,6 @@ class Tr extends Element
 
     protected $name = 'tr';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',

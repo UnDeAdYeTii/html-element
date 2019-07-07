@@ -10,10 +10,6 @@ class Ul extends Element
 
     protected $name = 'ul';
 
-    protected $markup = [
-        
-    ];
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',
