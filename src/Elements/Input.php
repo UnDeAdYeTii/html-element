@@ -4,12 +4,10 @@ namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
 use YeTii\HtmlElement\Schema;
-use YeTii\HtmlElement\Traits\IsSingleton;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
 
-class Input extends Element
+class Input extends Element implements IsSingleton
 {
-
-    use IsSingleton;
 
     protected $name = 'input';
 

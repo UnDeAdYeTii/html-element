@@ -3,12 +3,10 @@
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Traits\IsTextNode;
+use YeTii\HtmlElement\Interfaces\IsTextNode;
 
-class TextNode extends Element
+class TextNode extends Element implements IsTextNode
 {
-
-    use IsTextNode;
 
     /**
      * @inheritDoc

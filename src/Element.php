@@ -4,9 +4,9 @@ namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
 use YeTii\HtmlElement\TextNode;
-use YeTii\HtmlElement\Traits\HasTextChild;
-use YeTii\HtmlElement\Traits\IsSingleton;
-use YeTii\HtmlElement\Traits\IsTextNode;
+use YeTii\HtmlElement\Interfaces\HasTextChild;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
+use YeTii\HtmlElement\Interfaces\IsTextNode;
 
 class Element
 {
@@ -187,7 +187,7 @@ class Element
      */
     public function render(): string
     {
-        if ($this->hasTrait(IsTextNode::class)) {
+        if ($this instanceof IsTextNode) {
             $html = implode('', $this->children);
             
             if ($this->escapeHtml) {
@@ -224,7 +224,7 @@ class Element
 EOL;
         }
 
-        if ($this->hasTrait(IsSingleton::class)) {
+        if ($this instanceof IsSingleton) {
             $html[] = ' />';
         } else {
             $html[] = '>';
@@ -254,7 +254,7 @@ EOL;
 
         $html = implode('', $html);
 
-        if ($this->hasTrait(HasTextChild::class) && $this->escapeHtml) {
+        if ($this instanceof HasTextChild && $this->escapeHtml) {
             $html = htmlspecialchars($html);
         }
 
@@ -283,7 +283,7 @@ EOL;
             // Then find all child text nodes and apply the same logic
             foreach ($this->children as $child) {
                 if (is_object($child)) {
-                    if ($this->hasTrait(IsTextNode::class)) {
+                    if ($this instanceof IsTextNode) {
                         // .. unless it's been explicitly set to false
                         $child->escapeHtml(true, true);
                     }

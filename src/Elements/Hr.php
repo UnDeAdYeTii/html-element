@@ -3,12 +3,10 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Traits\IsSingleton;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
 
-class Hr extends Element
+class Hr extends Element implements IsSingleton
 {
-
-    use IsSingleton;
 
     protected $name = 'hr';
 

@@ -3,12 +3,10 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Traits\IsSingleton;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
 
-class Col extends Element
+class Col extends Element implements IsSingleton
 {
-
-    use IsSingleton;
 
     protected $name = 'col';
 
