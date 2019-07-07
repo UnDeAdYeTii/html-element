@@ -7,16 +7,28 @@ use YeTii\HtmlElement\Schema;
 
 class TextNode extends Element
 {
+
+    /**
+     * @inheritDoc
+     */
     protected $name = 'TEXT NODE';
 
+    /**
+     * @inheritDoc
+     */
     protected $markup = [
         Schema::TEXT_NODE
     ];
 
-    public function set(array $args)
+    /**
+     * @inheritDoc
+     */
+    public function set(array $args): Element
     {
         foreach ($args as $arg) {
             $this->children[] = $arg;
         }
+
+        return $this;
     }
 }

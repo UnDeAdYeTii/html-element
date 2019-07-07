@@ -4,8 +4,6 @@ namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
 use YeTii\HtmlElement\Schema;
-use YeTii\HtmlElement\Elements\OptGroup;
-use YeTii\HtmlElement\Elements\Option;
 
 class Select extends Element
 {
@@ -46,10 +44,4 @@ class Select extends Element
         'required',
         'size'
     ];
-
-    public $availableChildren = [
-        OptGroup::class,
-        Option::class,
-    ];
-
 }

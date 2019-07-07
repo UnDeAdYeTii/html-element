@@ -37,10 +37,4 @@ class Optgroup extends Element
         'inputmode',
         'disabled'
     ];
-
-    public $availableChildren = [
-        OptGroup::class, // Questionable...
-        Option::class,
-    ];
-
 }

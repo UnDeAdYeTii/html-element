@@ -1,6 +1,24 @@
 <?php
 
 
+function dump()
+{
+    foreach (func_get_args() as $arg) {
+        if (php_sapi_name() === 'cli') {
+            print print_r($arg, true) . PHP_EOL;
+        } else {
+            print '<pre>' . htmlspecialchars(print_r($arg, true)) . '</pre>';
+        }
+    }
+}
+
+function dd()
+{
+    call_user_func_array('dump', func_get_args());
+    die();
+}
+
+
 require_once 'vendor/autoload.php';
 
 // $el = new YeTii\HtmlElement\Elements\Input([

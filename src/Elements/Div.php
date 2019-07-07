@@ -8,8 +8,6 @@ use YeTii\HtmlElement\Schema;
 class Div extends Element
 {
 
-    protected $name = 'div';
-
     protected $markup = [
         
     ];
