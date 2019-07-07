@@ -1,5 +1,5 @@
 {
-    "name": "yetii/hmtlelement",
+    "name": "yetii/html-element",
     "description": "Generates HTML (elements) based on a schematic",
     "type": "library",
     "license": "MIT",
