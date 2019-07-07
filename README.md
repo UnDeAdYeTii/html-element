@@ -274,3 +274,30 @@ $parent->escapeHtml(true);
 
 $parent->render(); // <div>&lt;b&gt;Text&lt;/b&gt;<i>Some text</i></div>
 ```
+
+**Markups:**
+
+Excuse the name "markup" - these are similar to traits, however the need for actual traits is thin at the moment thus this simple categorisation of elements.
+
+There are a few different types of schemas - see `Schema::class`.
+
+- `Schema::SINGLETON` is a schema for singleton elements which have no close tags
+  - `<area>`
+  - `<base>`
+  - `<br>`
+  - `<col>`
+  - `<command>`
+  - `<embed>`
+  - `<hr>`
+  - `<img>`
+  - `<input>`
+  - `<keygen>`
+  - `<link>`
+  - `<meta>`
+  - `<param>`
+  - `<source>`
+  - `<track>`
+  - `<wbr>`
+- `Schema::TEXT_NODE` is for recognising an `Element` is a text node - currently only applied to `TextNode` class
+- `Schema::TEXT_CHILD` is for recognising an `Element` must not contain child `Element`s, only TextNode(s), for example, `Textarea`
+- `Schema::ATTRIBUTE` yeah, not sure what I was going to do with this. Ignore it.
