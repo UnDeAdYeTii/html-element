@@ -2,6 +2,7 @@
 
 namespace YeTii\HtmlElement;
 
+use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
 use YeTii\HtmlElement\TextNode;
 use YeTii\HtmlElement\Traits\HasTextChild;
 use YeTii\HtmlElement\Traits\IsSingleton;
@@ -142,7 +143,7 @@ class Element
             return $this;
         }
 
-        throw new \Exception('Invalid `' . $this->name . '` attribute name: ' . $key);
+        throw new InvalidAttributeException('Invalid `' . $this->name . '` attribute name: ' . $key);
     }
 
     /**
