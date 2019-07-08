@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Small extends Element
 {
-
     protected $name = 'small';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Small extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

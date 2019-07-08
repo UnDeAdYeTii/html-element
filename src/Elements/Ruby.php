@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Ruby extends Element
 {
-
     protected $name = 'ruby';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Ruby extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

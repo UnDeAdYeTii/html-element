@@ -1,13 +1,12 @@
 <?php
 
-
 function dump()
 {
     foreach (func_get_args() as $arg) {
         if (php_sapi_name() === 'cli') {
-            print print_r($arg, true) . PHP_EOL;
+            echo print_r($arg, true).PHP_EOL;
         } else {
-            print '<pre>' . htmlspecialchars(print_r($arg, true)) . '</pre>';
+            echo '<pre>'.htmlspecialchars(print_r($arg, true)).'</pre>';
         }
     }
 }
@@ -17,7 +16,6 @@ function dd()
     call_user_func_array('dump', func_get_args());
     die();
 }
-
 
 require_once 'vendor/autoload.php';
 
@@ -34,19 +32,19 @@ $el = new YeTii\HtmlElement\Elements\Select([
         new YeTii\HtmlElement\Elements\Option([
             'value' => 1,
             'node' => 'AB Web',
-            'selected' => null
+            'selected' => null,
         ]),
         new YeTii\HtmlElement\Elements\Option([
             'value' => 2,
             'node' => 'Test Organisation',
-            'selected' => true
+            'selected' => true,
         ]),
         new YeTii\HtmlElement\Elements\Option([
             'value' => 3,
             'node' => 'Google',
             'selected' => null,
         ]),
-    ]
+    ],
 ]);
 
 // $el = new YeTii\HtmlElement\Elements\Textarea([
@@ -55,9 +53,9 @@ $el = new YeTii\HtmlElement\Elements\Select([
 //     'node' => 'This is the value',
 // ]);
 
-print htmlspecialchars($el->render());
+echo htmlspecialchars($el->render());
 
-print '<pre>';
+echo '<pre>';
 print_r($el);
 
 die();
@@ -142,31 +140,31 @@ $attributesForElements = [
     'ol' => ['reversed', 'start'],
     'menu' => ['type'],
     'data' => ['value'],
-    'li' => ['value']
+    'li' => ['value'],
 ];
 
 $globalAttributes = [
-    "accesskey",
-    "autocapitalize",
-    "class",
-    "contenteditable",
-    "contextmenu",
-    "data-*",
-    "dir",
-    "draggable",
-    "dropzone",
-    "hidden",
-    "id",
-    "itemprop",
-    "lang",
-    "slot",
-    "spellcheck",
-    "style",
-    "tabindex",
-    "title",
-    "translate",
-    "enterkeyhint",
-    "inputmode"
+    'accesskey',
+    'autocapitalize',
+    'class',
+    'contenteditable',
+    'contextmenu',
+    'data-*',
+    'dir',
+    'draggable',
+    'dropzone',
+    'hidden',
+    'id',
+    'itemprop',
+    'lang',
+    'slot',
+    'spellcheck',
+    'style',
+    'tabindex',
+    'title',
+    'translate',
+    'enterkeyhint',
+    'inputmode',
 ];
 
 foreach (scandir($dir) as $file) {
@@ -174,7 +172,7 @@ foreach (scandir($dir) as $file) {
         continue;
     }
 
-    $path = $dir . $file;
+    $path = $dir.$file;
 
     $clName = str_replace('.php', '', $file);
     $name = strtolower($clName);

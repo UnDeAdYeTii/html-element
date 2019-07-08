@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Tfoot extends Element
 {
-
     protected $name = 'tfoot';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Tfoot extends Element
         'enterkeyhint',
         'inputmode',
         'align',
-        'bgcolor'
+        'bgcolor',
     ];
-
 }

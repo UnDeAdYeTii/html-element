@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Body extends Element
 {
-
     protected $name = 'body';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Body extends Element
         'enterkeyhint',
         'inputmode',
         'background',
-        'bgcolor'
+        'bgcolor',
     ];
-
 }

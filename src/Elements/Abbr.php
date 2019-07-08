@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Abbr extends Element
 {
-
     protected $name = 'abbr';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Abbr extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

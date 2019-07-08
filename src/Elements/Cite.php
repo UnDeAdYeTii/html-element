@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Cite extends Element
 {
-
     protected $name = 'cite';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Cite extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

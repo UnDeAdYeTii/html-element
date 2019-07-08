@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Col extends Element implements IsSingleton
 {
-
     protected $name = 'col';
 
     protected $availableAttributes = [
@@ -32,7 +32,6 @@ class Col extends Element implements IsSingleton
         'inputmode',
         'align',
         'bgcolor',
-        'span'
+        'span',
     ];
-
 }

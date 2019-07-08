@@ -4,5 +4,4 @@ namespace YeTii\HtmlElement\Interfaces;
 
 interface HasTextChild
 {
-
 }

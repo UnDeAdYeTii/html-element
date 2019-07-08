@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Optgroup extends Element
 {
-
     protected $name = 'optgroup';
 
     protected $availableAttributes = [
@@ -31,6 +29,6 @@ class Optgroup extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'disabled'
+        'disabled',
     ];
 }

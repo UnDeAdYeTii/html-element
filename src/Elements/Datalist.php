@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Datalist extends Element
 {
-
     protected $name = 'datalist';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Datalist extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

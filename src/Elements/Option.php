@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Option extends Element
 {
-
     protected $name = 'option';
 
     protected $availableAttributes = [
@@ -32,7 +31,6 @@ class Option extends Element
         'inputmode',
         'disabled',
         'selected',
-        'value'
+        'value',
     ];
-
 }

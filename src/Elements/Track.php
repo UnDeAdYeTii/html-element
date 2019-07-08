@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Track extends Element implements IsSingleton
 {
-
     protected $name = 'track';
 
     protected $availableAttributes = [
@@ -34,7 +34,6 @@ class Track extends Element implements IsSingleton
         'kind',
         'label',
         'src',
-        'srclang'
+        'srclang',
     ];
-
 }

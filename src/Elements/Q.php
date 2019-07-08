@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Q extends Element
 {
-
     protected $name = 'q';
 
     protected $availableAttributes = [
@@ -30,7 +29,6 @@ class Q extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'cite'
+        'cite',
     ];
-
 }

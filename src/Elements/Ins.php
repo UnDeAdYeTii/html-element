@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Ins extends Element
 {
-
     protected $name = 'ins';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Ins extends Element
         'enterkeyhint',
         'inputmode',
         'cite',
-        'datetime'
+        'datetime',
     ];
-
 }

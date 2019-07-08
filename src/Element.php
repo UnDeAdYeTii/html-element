@@ -2,11 +2,10 @@
 
 namespace YeTii\HtmlElement;
 
-use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
-use YeTii\HtmlElement\Interfaces\HasTextChild;
-use YeTii\HtmlElement\Interfaces\IsSingleton;
 use YeTii\HtmlElement\Interfaces\IsTextNode;
-use YeTii\HtmlElement\TextNode;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
+use YeTii\HtmlElement\Interfaces\HasTextChild;
+use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
 
 class Element
 {
@@ -19,7 +18,7 @@ class Element
     protected $name;
 
     /**
-     * List of current attributes for this Element
+     * List of current attributes for this Element.
      *
      * @var array
      */
@@ -34,7 +33,7 @@ class Element
     protected $availableAttributes = [];
 
     /**
-     * List of Elements in this Element's child nodes
+     * List of Elements in this Element's child nodes.
      *
      * @var array
      */
@@ -42,7 +41,7 @@ class Element
 
     /**
      * List of attributes which do not require a value. The existence of
-     * the attribute means true, while the absense means false
+     * the attribute means true, while the absense means false.
      *
      * @var array
      */
@@ -58,12 +57,12 @@ class Element
      * Indicator whether or not to render text contents as raw or
      * htmlspecialchar'd. Null indicates inheritance, if applicable.
      *
-     * @var boolean
+     * @var bool
      */
     protected $escapeHtml = null;
 
     /**
-     * Create a new Element
+     * Create a new Element.
      *
      * @param array $args List of attributes (and/or nodes)
      * @param string $name Optional name to set for this element, used for rendering
@@ -90,7 +89,7 @@ class Element
      * @param string $name The name of the element
      * @return Element
      */
-    public function setName(string $name): Element
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -98,7 +97,7 @@ class Element
     }
 
     /**
-     * Return the name of the element
+     * Return the name of the element.
      *
      * @return string
      */
@@ -108,12 +107,12 @@ class Element
     }
 
     /**
-     * Bulk set attributes (and nodes) for this element
+     * Bulk set attributes (and nodes) for this element.
      *
      * @param array $args List of attributes (and/or nodes)
      * @return Element
      */
-    public function set(array $args): Element
+    public function set(array $args): self
     {
         foreach ($args as $key => $value) {
             $this->setAttribute($key, $value);
@@ -124,13 +123,13 @@ class Element
 
     /**
      * Set an attribute name and value for this element, or add one or more
-     * child elements to this element's child nodes
+     * child elements to this element's child nodes.
      *
      * @param string $key The name of the attribute
      * @param mixed $value The value of the attribute
      * @return Element
      */
-    public function setAttribute(string $key, $value): Element
+    public function setAttribute(string $key, $value): self
     {
         if ($key === 'nodes' || $key === 'node') {
             return $this->addChildren((array) $value);
@@ -142,16 +141,16 @@ class Element
             return $this;
         }
 
-        throw new InvalidAttributeException('Invalid `' . $this->name . '` attribute name: ' . $key);
+        throw new InvalidAttributeException('Invalid `'.$this->name.'` attribute name: '.$key);
     }
 
     /**
-     * Append multiple elements to this element's child nodes
+     * Append multiple elements to this element's child nodes.
      *
      * @param array $children List of child elements
      * @return Element
      */
-    public function addChildren(array $children): Element
+    public function addChildren(array $children): self
     {
         foreach ($children as $child) {
             if (is_string($child)) {
@@ -167,12 +166,12 @@ class Element
     }
 
     /**
-     * Append an element to this element's child nodes
+     * Append an element to this element's child nodes.
      *
      * @param Element $child A child Element
      * @return Element
      */
-    public function addChild(Element $child): Element
+    public function addChild(self $child): self
     {
         $this->children[] = $child;
 
@@ -180,7 +179,7 @@ class Element
     }
 
     /**
-     * Render any given element in its entirety
+     * Render any given element in its entirety.
      *
      * @return string
      */
@@ -197,21 +196,21 @@ class Element
         }
 
         $html = [
-            '<' . $this->name,
+            '<'.$this->name,
         ];
 
         foreach ($this->attributes as $key => $value) {
             if (in_array($key, $this->booleanAttributes)) {
-                if (!$value) {
+                if (! $value) {
                     continue;
                 }
 
-                $html[] = ' ' . $key;
+                $html[] = ' '.$key;
                 continue;
             }
 
             if ($value === null) {
-                $html[] = ' ' . $key;
+                $html[] = ' '.$key;
                 continue;
             }
 
@@ -229,7 +228,7 @@ EOL;
 
             $html[] = $this->renderChildren();
 
-            $html[] = '</' . $this->name . '>';
+            $html[] = '</'.$this->name.'>';
         }
 
         $html = implode('', $html);
@@ -238,7 +237,7 @@ EOL;
     }
 
     /**
-     * Render all child elements of any given element as a string
+     * Render all child elements of any given element as a string.
      *
      * @return string
      */
@@ -261,13 +260,13 @@ EOL;
 
     /**
      * Specify whether or not to render this Element's text nodes
-     * are raw or htmlspecialchar'd
+     * are raw or htmlspecialchar'd.
      *
      * @param  bool  $escapeHtml
      * @param  bool  $inheritFalse
      * @return Element
      */
-    public function escapeHtml(bool $escapeHtml = true, $inheritFalse = false): Element
+    public function escapeHtml(bool $escapeHtml = true, $inheritFalse = false): self
     {
         // If explictly set to false (i.e. not null) and should retain that false
         if ($this->escapeHtml === false && $inheritFalse) {

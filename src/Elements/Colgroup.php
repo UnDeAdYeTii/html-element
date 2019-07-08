@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Colgroup extends Element
 {
-
     protected $name = 'colgroup';
 
     protected $availableAttributes = [
@@ -32,7 +31,6 @@ class Colgroup extends Element
         'inputmode',
         'align',
         'bgcolor',
-        'span'
+        'span',
     ];
-
 }

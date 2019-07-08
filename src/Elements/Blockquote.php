@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Blockquote extends Element
 {
-
     protected $name = 'blockquote';
 
     protected $availableAttributes = [
@@ -30,7 +29,6 @@ class Blockquote extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'cite'
+        'cite',
     ];
-
 }

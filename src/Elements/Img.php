@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Img extends Element implements IsSingleton
 {
-
     protected $name = 'img';
 
     protected $availableAttributes = [
@@ -46,7 +45,6 @@ class Img extends Element implements IsSingleton
         'src',
         'srcset',
         'usemap',
-        'width'
+        'width',
     ];
-
 }

@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Textarea extends Element
 {
-
     protected $name = 'textarea';
 
     protected $availableAttributes = [
@@ -46,7 +44,6 @@ class Textarea extends Element
         'readonly',
         'required',
         'rows',
-        'wrap'
+        'wrap',
     ];
-
 }

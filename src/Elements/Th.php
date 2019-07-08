@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Th extends Element
 {
-
     protected $name = 'th';
 
     protected $availableAttributes = [
@@ -36,7 +35,6 @@ class Th extends Element
         'colspan',
         'headers',
         'rowspan',
-        'scope'
+        'scope',
     ];
-
 }

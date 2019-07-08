@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Thead extends Element
 {
-
     protected $name = 'thead';
 
     protected $availableAttributes = [
@@ -30,7 +29,6 @@ class Thead extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'align'
+        'align',
     ];
-
 }

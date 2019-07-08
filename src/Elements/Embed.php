@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Embed extends Element implements IsSingleton
 {
-
     protected $name = 'embed';
 
     protected $availableAttributes = [
@@ -33,7 +33,6 @@ class Embed extends Element implements IsSingleton
         'height',
         'src',
         'type',
-        'width'
+        'width',
     ];
-
 }
