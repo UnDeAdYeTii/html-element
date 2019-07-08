@@ -1,9 +1,7 @@
 <?php
-
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class A extends Element
 {
@@ -39,7 +37,7 @@ class A extends Element
         'referrerpolicy',
         'rel',
         'shape',
-        'target'
+        'target',
     ];
 
 }

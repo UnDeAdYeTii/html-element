@@ -1,16 +1,15 @@
 <?php
-
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
-use YeTii\HtmlElement\TextNode;
 use YeTii\HtmlElement\Interfaces\HasTextChild;
 use YeTii\HtmlElement\Interfaces\IsSingleton;
 use YeTii\HtmlElement\Interfaces\IsTextNode;
+use YeTii\HtmlElement\TextNode;
 
 class Element
 {
-    
+
     /**
      * Optional name for the element, should PHP class naming forbid the
      * element name. Defaults to the Element's PHP class name.
@@ -139,7 +138,7 @@ class Element
 
         if (in_array($key, $this->availableAttributes) || substr($key, 0, 5) === 'data-') {
             $this->attributes[$key] = $value;
-            
+
             return $this;
         }
 
@@ -157,7 +156,7 @@ class Element
         foreach ($children as $child) {
             if (is_string($child)) {
                 $child = new TextNode([
-                    'node' => $child
+                    'node' => $child,
                 ]);
             }
 
@@ -168,7 +167,7 @@ class Element
     }
 
     /**
-     * Append an element to this element's child nodes 
+     * Append an element to this element's child nodes
      *
      * @param Element $child A child Element
      * @return Element
@@ -189,17 +188,16 @@ class Element
     {
         if ($this instanceof IsTextNode) {
             $html = implode('', $this->children);
-            
+
             if ($this->escapeHtml) {
                 $html = htmlspecialchars($html);
             }
 
             return $html;
         }
-        
 
         $html = [
-            '<' . $this->name
+            '<' . $this->name,
         ];
 
         foreach ($this->attributes as $key => $value) {
@@ -247,7 +245,7 @@ EOL;
     public function renderChildren(): string
     {
         $html = [];
-        
+
         foreach ($this->children as $child) {
             $html[] = $child->render();
         }
@@ -283,7 +281,7 @@ EOL;
             // Then find all child text nodes and apply the same logic
             foreach ($this->children as $child) {
                 if (is_object($child)) {
-                    if ($this instanceof IsTextNode) {
+                    if ($child instanceof IsTextNode) {
                         // .. unless it's been explicitly set to false
                         $child->escapeHtml(true, true);
                     }
@@ -292,9 +290,5 @@ EOL;
         }
 
         return $this;
-    }
-
-    function hasTrait($trait) {
-        return in_array($trait, array_keys(class_uses($this)));
     }
 }
