@@ -285,6 +285,6 @@ $parent->render(); // <div>&lt;b&gt;Text&lt;/b&gt;<i>Some text</i></div>
 
 These interfaces change the way an element is rendered.
 
-- **IsSingleton** renders an element with no closing tag (e.g. `<input />`)
-- **IsTextNode** renders an element as a text node (i.e. raw or htmlspecialchar'd text)
-- **HasTextChild** renders an element with children as text-only (e.g. `<textarea>text child here</textarea>`)
+- `YeTii\HtmlElement\Interfaces\HasTextChild` renders an element with children as text-only (e.g. `<textarea>text child here</textarea>`)
+- `YeTii\HtmlElement\Interfaces\IsSingleton` renders an element with no closing tag (e.g. `<input />`)
+- `YeTii\HtmlElement\Interfaces\IsTextNode` renders an element as a text node (i.e. raw or htmlspecialchar'd text)
