@@ -4,18 +4,18 @@ namespace YeTii\HtmlElement\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use YeTii\HtmlElement\TextNode;
-use YeTii\HtmlElement\Elements\Div;
-use YeTii\HtmlElement\Elements\Span;
-use YeTii\HtmlElement\Elements\Input;
-use YeTii\HtmlElement\Elements\Textarea;
-use YeTii\HtmlElement\Elements\B as Bold;
+use YeTii\HtmlElement\Elements\HtmlDiv;
+use YeTii\HtmlElement\Elements\HtmlSpan;
+use YeTii\HtmlElement\Elements\HtmlInput;
+use YeTii\HtmlElement\Elements\HtmlTextarea;
+use YeTii\HtmlElement\Elements\HtmlB;
 
 final class ElementsTest extends TestCase
 {
     /** @test */
     public function itCanRetrieveTheDefaultName(): void
     {
-        $div = new Div();
+        $div = new HtmlDiv();
 
         $expected = 'div';
 
@@ -25,7 +25,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itCanRetrieveTheOverridenName(): void
     {
-        $div = new Div([], 'divv');
+        $div = new HtmlDiv([], 'divv');
 
         $expected = 'divv';
 
@@ -35,7 +35,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForSingletonElements(): void
     {
-        $input = new Input([
+        $input = new HtmlInput([
             'id' => 'input_id',
             'name' => 'test',
             'value' => '34',
@@ -49,7 +49,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForTextNodeElements(): void
     {
-        $el = new Textarea([
+        $el = new HtmlTextarea([
             'id' => 'comments_field',
             'name' => 'comments',
             'class' => 'form-control',
@@ -64,7 +64,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForNormalElements(): void
     {
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
         ]);
@@ -77,11 +77,11 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForNormalElementsWithSingleChildElement(): void
     {
-        $child = new Span([
+        $child = new HtmlSpan([
             'class' => 'something',
         ]);
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
             'nodes' => [
@@ -97,14 +97,14 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForNormalElementsWithMultipleChildElement(): void
     {
-        $child1 = new Span([
+        $child1 = new HtmlSpan([
             'class' => 'something',
         ]);
-        $child2 = new Bold([
+        $child2 = new HtmlB([
             'class' => 'else',
         ]);
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
             'nodes' => [
@@ -123,7 +123,7 @@ final class ElementsTest extends TestCase
     {
         $child = 'This is a test';
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
             'node' => $child,
@@ -140,7 +140,7 @@ final class ElementsTest extends TestCase
         $child1 = 'This is a test.';
         $child2 = 'So is this';
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
             'nodes' => [
@@ -157,34 +157,34 @@ final class ElementsTest extends TestCase
     /** @test */
     public function itGeneratesHtmlForNormalElementsWithMultipleNodesWithMultipleNodes(): void
     {
-        $child1 = new Span([
+        $child1 = new HtmlSpan([
             'class' => 'test',
             'nodes' => [
-                new Span([
+                new HtmlSpan([
                     'class' => 'span-here',
                     'node' => 'what?',
                 ]),
-                new Bold([
+                new HtmlB([
                     'title' => 'This is bold',
                     'node' => 'Just text here',
                 ]),
             ],
         ]);
-        $child2 = new Span([
+        $child2 = new HtmlSpan([
             'class' => 'test-node',
             'nodes' => [
-                new Span([
+                new HtmlSpan([
                     'class' => 'a-class',
                     'node' => 'who?',
                 ]),
-                new Bold([
+                new HtmlB([
                     'title' => 'Bold text',
                     'node' => 'Stuff here',
                 ]),
             ],
         ]);
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'section',
             'class' => 'class-name',
             'nodes' => [
@@ -201,7 +201,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function theOrderOfAttributesDefinedIsToTheOrderOfAttributesRendered(): void
     {
-        $div = new Div([
+        $div = new HtmlDiv([
             'id' => 'a',
             'title' => 'b',
             'class' => 'c',
@@ -213,7 +213,7 @@ final class ElementsTest extends TestCase
         $this->assertEquals($expected, $div->render());
 
         // then mix it up
-        $div = new Div([
+        $div = new HtmlDiv([
             'title' => 'b',
             'data-id' => 'd',
             'class' => 'c',
@@ -228,7 +228,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function htmlSpecialCharsAreNotEncodedForTextNodes(): void
     {
-        $div = new Div([
+        $div = new HtmlDiv([
             'node' => '<b>test</b>',
         ]);
 
@@ -238,7 +238,7 @@ final class ElementsTest extends TestCase
 
         // Then try htmlspecialchars
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'node' => htmlspecialchars('<b>test</b>'),
         ]);
 
@@ -250,7 +250,7 @@ final class ElementsTest extends TestCase
     /** @test */
     public function htmlSpecialCharsAreEncodedForTextNodesWhenSpecified(): void
     {
-        $div = new Div([
+        $div = new HtmlDiv([
             'node' => '<b>test</b>',
         ]);
 
@@ -262,7 +262,7 @@ final class ElementsTest extends TestCase
 
         // Then try htmlspecialchars
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'node' => htmlspecialchars('<b>test</b>'),
         ]);
 
@@ -281,7 +281,7 @@ final class ElementsTest extends TestCase
         ]);
         $child2->escapeHtml(false);
 
-        $div = new Div([
+        $div = new HtmlDiv([
             'nodes' => [
                 '<i>test</i>',
                 $child2,

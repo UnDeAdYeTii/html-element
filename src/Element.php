@@ -76,11 +76,6 @@ class Element
         if ($name !== null) {
             $this->setName($name);
         }
-
-        if ($this->name === null) {
-            $cl = get_class($this);
-            $this->setName(strtolower(substr($cl, strrpos($cl, '\\') + 1)));
-        }
     }
 
     /**
@@ -103,6 +98,13 @@ class Element
      */
     public function getName(): string
     {
+        if ($this->name === null) {
+            $cl = get_class($this);
+            $count = 1;
+            $name = str_replace('Html', '', substr($cl, strrpos($cl, '\\') + 1), $count);
+            $this->setName(strtolower($name));
+        }
+        
         return $this->name;
     }
 
@@ -141,7 +143,7 @@ class Element
             return $this;
         }
 
-        throw new InvalidAttributeException('Invalid `'.$this->name.'` attribute name: '.$key);
+        throw new InvalidAttributeException('Invalid `'.$this->getName().'` attribute name: '.$key);
     }
 
     /**
@@ -196,7 +198,7 @@ class Element
         }
 
         $html = [
-            '<'.$this->name,
+            '<'.$this->getName(),
         ];
 
         foreach ($this->attributes as $key => $value) {
@@ -228,7 +230,7 @@ EOL;
 
             $html[] = $this->renderChildren();
 
-            $html[] = '</'.$this->name.'>';
+            $html[] = '</'.$this->getName().'>';
         }
 
         $html = implode('', $html);
