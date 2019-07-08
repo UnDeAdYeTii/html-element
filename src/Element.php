@@ -134,7 +134,11 @@ class Element
     public function setAttribute(string $key, $value): self
     {
         if ($key === 'nodes' || $key === 'node') {
-            return $this->addChildren((array) $value);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            
+            return $this->addChildren($value);
         }
 
         if (in_array($key, $this->availableAttributes) || substr($key, 0, 5) === 'data-') {

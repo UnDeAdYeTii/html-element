@@ -8,164 +8,170 @@ Provides a more robust alternative to generating HTML
 
 ### Usage
 
-The using is fairly simple. Firstly, you have the different `Element`s under the `YeTii\HtmlElement\Elements` namespace, for example a `<div>` element is `YeTii\HtmlElement\Elements\Div`, an `<input>` element is `YeTii\HtmlElement\Elements\Input`, etc.
+The using is fairly simple. Firstly, you have the different `Element`s under the `YeTii\HtmlElement\Elements` namespace, for example a `<div>` element is `YeTii\HtmlElement\Elements\HtmlDiv`, an `<input>` element is `YeTii\HtmlElement\Elements\HtmlInput`, etc. This is except for the `YeTii\HtmlElement\TextNode`.
 
 **Full List:**
 
-- `<a>`: `A`
-- `<abbr>`: `Abbr`
-- `<address>`: `Address`
-- `<area>`: `Area`
-- `<article>`: `Article`
-- `<aside>`: `Aside`
-- `<audio>`: `Audio`
-- `<b>`: `B`
-- `<bdi>`: `Bdi`
-- `<bdo>`: `Bdo`
-- `<blockquote>`: `Blockquote`
-- `<body>`: `Body`
-- `<br>`: `Br`
-- `<button>`: `Button`
-- `<canvas>`: `Canvas`
-- `<caption>`: `Caption`
-- `<cite>`: `Cite`
-- `<code>`: `Code`
-- `<col>`: `Col`
-- `<colgroup>`: `Colgroup`
-- `<command>`: `Command`
-- `<datalist>`: `Datalist`
-- `<dd>`: `Dd`
-- `<del>`: `Del`
-- `<details>`: `Details`
-- `<dfn>`: `Dfn`
-- `<div>`: `Div`
-- `<dl>`: `Dl`
-- `<dt>`: `Dt`
-- `<em>`: `Em`
-- `<embed>`: `Embed`
-- `<fieldset>`: `Fieldset`
-- `<figcaption>`: `Figcaption`
-- `<figure>`: `Figure`
-- `<footer>`: `Footer`
-- `<form>`: `Form`
-- `<h1>`: `H1`
-- `<h2>`: `H2`
-- `<h3>`: `H3`
-- `<h4>`: `H4`
-- `<h5>`: `H5`
-- `<h6>`: `H6`
-- `<head>`: `Head`
-- `<header>`: `Header`
-- `<hr>`: `Hr`
-- `<html>`: `Html`
-- `<i>`: `I`
-- `<iframe>`: `Iframe`
-- `<img>`: `Img`
-- `<input>`: `Input`
-- `<ins>`: `Ins`
-- `<kbd>`: `Kbd`
-- `<keygen>`: `Keygen`
-- `<label>`: `Label`
-- `<legend>`: `Legend`
-- `<li>`: `Li`
-- `<main>`: `Main`
-- `<map>`: `Map`
-- `<mark>`: `Mark`
-- `<menu>`: `Menu`
-- `<meter>`: `Meter`
-- `<nav>`: `Nav`
-- `<object>`: `Object`
-- `<ol>`: `Ol`
-- `<optgroup>`: `Optgroup`
-- `<option>`: `Option`
-- `<output>`: `Output`
-- `<p>`: `P`
-- `<param>`: `Param`
-- `<pre>`: `Pre`
-- `<progress>`: `Progress`
-- `<q>`: `Q`
-- `<rp>`: `Rp`
-- `<rt>`: `Rt`
-- `<ruby>`: `Ruby`
-- `<s>`: `S`
-- `<samp>`: `Samp`
-- `<section>`: `Section`
-- `<select>`: `Select`
-- `<small>`: `Small`
-- `<source>`: `Source`
-- `<span>`: `Span`
-- `<strong>`: `Strong`
-- `<sub>`: `Sub`
-- `<summary>`: `Summary`
-- `<sup>`: `Sup`
-- `<table>`: `Table`
-- `<tbody>`: `Tbody`
-- `<td>`: `Td`
-- `<textarea>`: `Textarea`
-- `<tfoot>`: `Tfoot`
-- `<th>`: `Th`
-- `<thead>`: `Thead`
-- `<time>`: `Time`
-- `<tr>`: `Tr`
-- `<track>`: `Track`
-- `<u>`: `U`
-- `<ul>`: `Ul`
-- `<var>`: `Var`
-- `<video>`: `Video`
-- `<wbr>`: `Wbr`
+- `<a>`: `HtmlA`
+- `<abbr>`: `HtmlAbbr`
+- `<address>`: `HtmlAddress`
+- `<area>`: `HtmlArea`
+- `<article>`: `HtmlArticle`
+- `<aside>`: `HtmlAside`
+- `<audio>`: `HtmlAudio`
+- `<b>`: `HtmlB`
+- `<bdi>`: `HtmlBdi`
+- `<bdo>`: `HtmlBdo`
+- `<blockquote>`: `HtmlBlockquote`
+- `<body>`: `HtmlBody`
+- `<br>`: `HtmlBr`
+- `<button>`: `HtmlButton`
+- `<canvas>`: `HtmlCanvas`
+- `<caption>`: `HtmlCaption`
+- `<cite>`: `HtmlCite`
+- `<code>`: `HtmlCode`
+- `<col>`: `HtmlCol`
+- `<colgroup>`: `HtmlColgroup`
+- `<command>`: `HtmlCommand`
+- `<datalist>`: `HtmlDatalist`
+- `<dd>`: `HtmlDd`
+- `<del>`: `HtmlDel`
+- `<details>`: `HtmlDetails`
+- `<dfn>`: `HtmlDfn`
+- `<div>`: `HtmlDiv`
+- `<dl>`: `HtmlDl`
+- `<dt>`: `HtmlDt`
+- `<em>`: `HtmlEm`
+- `<embed>`: `HtmlEmbed`
+- `<fieldset>`: `HtmlFieldset`
+- `<figcaption>`: `HtmlFigcaption`
+- `<figure>`: `HtmlFigure`
+- `<footer>`: `HtmlFooter`
+- `<form>`: `HtmlForm`
+- `<h1>`: `HtmlH1`
+- `<h2>`: `HtmlH2`
+- `<h3>`: `HtmlH3`
+- `<h4>`: `HtmlH4`
+- `<h5>`: `HtmlH5`
+- `<h6>`: `HtmlH6`
+- `<head>`: `HtmlHead`
+- `<header>`: `HtmlHeader`
+- `<hr>`: `HtmlHr`
+- `<html>`: `HtmlHtml`
+- `<i>`: `HtmlI`
+- `<iframe>`: `HtmlIframe`
+- `<img>`: `HtmlImg`
+- `<input>`: `HtmlInput`
+- `<ins>`: `HtmlIns`
+- `<kbd>`: `HtmlKbd`
+- `<keygen>`: `HtmlKeygen`
+- `<label>`: `HtmlLabel`
+- `<legend>`: `HtmlLegend`
+- `<li>`: `HtmlLi`
+- `<main>`: `HtmlMain`
+- `<map>`: `HtmlMap`
+- `<mark>`: `HtmlMark`
+- `<menu>`: `HtmlMenu`
+- `<meter>`: `HtmlMeter`
+- `<nav>`: `HtmlNav`
+- `<object>`: `HtmlObject`
+- `<ol>`: `HtmlOl`
+- `<optgroup>`: `HtmlOptgroup`
+- `<option>`: `HtmlOption`
+- `<output>`: `HtmlOutput`
+- `<p>`: `HtmlP`
+- `<param>`: `HtmlParam`
+- `<pre>`: `HtmlPre`
+- `<progress>`: `HtmlProgress`
+- `<q>`: `HtmlQ`
+- `<rp>`: `HtmlRp`
+- `<rt>`: `HtmlRt`
+- `<ruby>`: `HtmlRuby`
+- `<s>`: `HtmlS`
+- `<samp>`: `HtmlSamp`
+- `<section>`: `HtmlSection`
+- `<select>`: `HtmlSelect`
+- `<small>`: `HtmlSmall`
+- `<source>`: `HtmlSource`
+- `<span>`: `HtmlSpan`
+- `<strong>`: `HtmlStrong`
+- `<sub>`: `HtmlSub`
+- `<summary>`: `HtmlSummary`
+- `<sup>`: `HtmlSup`
+- `<table>`: `HtmlTable`
+- `<tbody>`: `HtmlTbody`
+- `<td>`: `HtmlTd`
+- `<textarea>`: `HtmlTextarea`
+- `<tfoot>`: `HtmlTfoot`
+- `<th>`: `HtmlTh`
+- `<thead>`: `HtmlThead`
+- `<time>`: `HtmlTime`
+- `<tr>`: `HtmlTr`
+- `<track>`: `HtmlTrack`
+- `<u>`: `HtmlU`
+- `<ul>`: `HtmlUl`
+- `<var>`: `HtmlVar`
+- `<video>`: `HtmlVideo`
+- `<wbr>`: `HtmlWbr`
 
 **Basic Usage:**
 
-The first argument for the `Element` is an array of attributes (key => value), with the second being an optional (not really used at the moment) name to override the default (which is the class name in lowercase, e.g. `Input` is `input`). This may be removed in future versions, the idea was to be able to support Vue-like component names.
+The first argument for the `Element` is an array of attributes (key => value).
+
+The second being an optional (not really used at the moment) name to override the default name. The default name is the class name in lowercase, stripped of the `Html` prefix, for example `HtmlInput` is rendered using the name `input`). This argument may be removed in future versions, the idea was to be able to support Vue-like component names. Alternatively you can use `$element->setName($name);` to set a name (and `$element->getName();` to retrieve it)
 
 ```php
-$element = new Input([
-    'type' => 'text',
-    'id' => 'first_name_field',
-    'name' => 'first_name',
+$element = new HtmlInput([
+    'type' => 'date',
+    'id' => 'dob_field',
+    'name' => 'dob',
 ]);
 
-$element->render(); // <input type="text" id="first_name_field" name="first_name">
+$element->render(); // <input type="date" id="dob_field" name="dob">
+
+// Or try a custom element name (if generating Vue, for example)
+$element->setName('dob-picker');
+
+$element->render(); // <dob-picker type="date" id="dob_field" name="dob">
 ```
 
 **Child Elements:**
 
-You can specify a child by providing a `node` or `nodes` "attribute" with a one or more child elements. Alternatively, you can go: `$parent->addChild($child);` or `$parent->addChildren([$child1, $child2]);` 
+You can specify a child by providing a `node` or `nodes` "attribute" as a quickhand for adding a child node or multiple children nodes. Alternatively, you can go: `$parent->addChild(Element $child);` or `$parent->addChildren(array $children);` 
 
 ```php
-
-$child1 = new Span([
+$child1 = new HtmlSpan([
     'class' => 'test',
     'nodes' => [
-        new Span([
+        new HtmlSpan([
             'class' => 'span-here',
             'node' => 'what?',
         ]),
-        new Bold([
+        new HtmlBold([
             'title' => 'This is bold',
             'node' => 'Just text here'
         ])
     ]
 ]);
-$child2 = new Span([
+
+$child2 = new HtmlSpan([
     'class' => 'test-node',
     'nodes' => [
-        new Span([
+        new HtmlSpan([
             'class' => 'a-class',
             'node' => 'who?',
-        ]),
-        new Bold([
-            'title' => 'Bold text',
-            'node' => 'Stuff here'
         ])
     ]
 ]);
+$child2->addChild(new HtmlBold([
+    'title' => 'Bold text',
+    'node' => 'Stuff here'
+]));
 
-$div = new Div([
+$div = new HtmlDiv([
     'id' => 'section',
     'class' => 'class-name',
 ]);
-
 $div->addChildren([
     $child1,
     $child2
@@ -185,13 +191,13 @@ $text = new \Html\HtmlElement\TextNode([
 
 $text->render(); // This is some text
 
-$div = new Div([
+$div = new HtmlDiv([
     'node' => $text
 ]);
 
 $div->render(); // <div>This is some text</div>
 
-$div = new Div([
+$div = new HtmlDiv([
     'node' => 'So is this'
 ]);
 
@@ -203,7 +209,7 @@ $div->render(); // <div>So is this</div>
 The order you specify the attributes correlates to the order they are rendered.
 
 ```php
-$div = new Div([
+$div = new HtmlDiv([
     'id' => 'a',
     'title' => 'b',
     'class' => 'c',
@@ -212,7 +218,7 @@ $div = new Div([
 
 $div->render(); // <div id="a" title="b" class="c" data-id="d"></div>
 
-$div = new Div([
+$div = new HtmlDiv([
     'title' => 'b',
     'data-id' => 'd',
     'class' => 'c',
@@ -227,7 +233,7 @@ $div->render(); // <div title="b" data-id="d" class="c" id="a"></div>
 You can also specify whether or not to encode html special characters by doing the following:
 
 ```php
-$div = new Div([
+$div = new HtmlDiv([
     'node' => '<b>Text</b>',
 ]);
 $div->escapeHtml();
@@ -238,10 +244,10 @@ $div->render(); // <div>&lt;b&gt;Text&lt;/b&gt;</div>
 Currently, inheritance does NOT apply to escaping of HTML, meaning that if the parent `Element` is escaping HTML and you provide a child `Element`, and that child `Element` has a text node with HTML - it will NOT be escaped. You must define whether or not to escape the HTML per `Element`. Take the following as an example:
 
 ```php
-$child = new Span([
+$child = new HtmlSpan([
     'node' => '<i>Some text</i>',
 ]);
-$parent = new Div([
+$parent = new HtmlDiv([
     'nodes' => [
         '<b>Some text</b>',
         $child
@@ -257,14 +263,14 @@ The text nodes that are immediate children are escaped, but the `$child` does no
 Should you want a child `Element` to NOT escape HTML, but would like the immediate parent to, you may do so by doing the following:
 
 ```php
-$child1 = new Span([
+$child1 = new HtmlSpan([
     'node' => '<i>Some text</i>',
 ]);
 $child1->escapeHtml(false);
-$child2 = new Span([
+$child2 = new HtmlSpan([
     'node' => '<i>Some text</i>',
 ]);
-$parent = new Div([
+$parent = new HtmlDiv([
     'nodes' => [
         '<b>Some text</b>',
         $child2,
@@ -275,29 +281,10 @@ $parent->escapeHtml(true);
 $parent->render(); // <div>&lt;b&gt;Text&lt;/b&gt;<i>Some text</i></div>
 ```
 
-**Markups:**
+**Interfaces:**
 
-Excuse the name "markup" - these are similar to traits, however the need for actual traits is thin at the moment thus this simple categorisation of elements.
+These interfaces change the way an element is rendered.
 
-There are a few different types of schemas - see `Schema::class`.
-
-- `Schema::SINGLETON` is a schema for singleton elements which have no close tags
-  - `<area>`
-  - `<base>`
-  - `<br>`
-  - `<col>`
-  - `<command>`
-  - `<embed>`
-  - `<hr>`
-  - `<img>`
-  - `<input>`
-  - `<keygen>`
-  - `<link>`
-  - `<meta>`
-  - `<param>`
-  - `<source>`
-  - `<track>`
-  - `<wbr>`
-- `Schema::TEXT_NODE` is for recognising an `Element` is a text node - currently only applied to `TextNode` class
-- `Schema::TEXT_CHILD` is for recognising an `Element` must not contain child `Element`s, only TextNode(s), for example, `Textarea`
-- `Schema::ATTRIBUTE` yeah, not sure what I was going to do with this. Ignore it.
+- **IsSingleton** renders an element with no closing tag (e.g. `<input />`)
+- **IsTextNode** renders an element as a text node (i.e. raw or htmlspecialchar'd text)
+- **HasTextChild** renders an element with children as text-only (e.g. `<textarea>text child here</textarea>`)
