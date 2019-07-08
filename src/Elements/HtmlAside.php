@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlAside extends Element
 {
-
     protected $name = 'aside';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlAside extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

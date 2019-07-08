@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlRp extends Element
 {
-
     protected $name = 'rp';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlRp extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

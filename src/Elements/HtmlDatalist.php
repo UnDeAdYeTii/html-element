@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlDatalist extends Element
 {
-
     protected $name = 'datalist';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlDatalist extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

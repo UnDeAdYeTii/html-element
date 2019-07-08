@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlWbr extends Element implements IsSingleton
 {
-
     protected $name = 'wbr';
 
     protected $availableAttributes = [
@@ -30,7 +29,6 @@ class HtmlWbr extends Element implements IsSingleton
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

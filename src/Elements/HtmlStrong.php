@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlStrong extends Element
 {
-
     protected $name = 'strong';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlStrong extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

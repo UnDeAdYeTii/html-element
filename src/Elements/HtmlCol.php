@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlCol extends Element implements IsSingleton
 {
-
     protected $name = 'col';
 
     protected $availableAttributes = [
@@ -33,7 +32,6 @@ class HtmlCol extends Element implements IsSingleton
         'inputmode',
         'align',
         'bgcolor',
-        'span'
+        'span',
     ];
-
 }

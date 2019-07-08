@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlThead extends Element
 {
-
     protected $name = 'thead';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlThead extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'align'
+        'align',
     ];
-
 }

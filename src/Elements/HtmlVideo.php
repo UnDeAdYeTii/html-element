@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlVideo extends Element
 {
-
     protected $name = 'video';
 
     protected $availableAttributes = [
@@ -41,7 +39,6 @@ class HtmlVideo extends Element
         'poster',
         'preload',
         'src',
-        'width'
+        'width',
     ];
-
 }

@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlAddress extends Element
 {
-
     protected $name = 'address';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlAddress extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

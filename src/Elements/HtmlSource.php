@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlSource extends Element implements IsSingleton
 {
-
     protected $name = 'source';
 
     protected $availableAttributes = [
@@ -35,7 +34,6 @@ class HtmlSource extends Element implements IsSingleton
         'sizes',
         'src',
         'srcset',
-        'type'
+        'type',
     ];
-
 }

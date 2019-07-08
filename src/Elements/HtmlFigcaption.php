@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlFigcaption extends Element
 {
-
     protected $name = 'figcaption';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlFigcaption extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

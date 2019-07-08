@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlNav extends Element
 {
-
     protected $name = 'nav';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlNav extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

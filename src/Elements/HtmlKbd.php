@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlKbd extends Element
 {
-
     protected $name = 'kbd';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlKbd extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

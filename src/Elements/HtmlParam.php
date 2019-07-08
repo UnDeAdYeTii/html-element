@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlParam extends Element implements IsSingleton
 {
-
     protected $name = 'param';
 
     protected $availableAttributes = [
@@ -32,7 +31,6 @@ class HtmlParam extends Element implements IsSingleton
         'enterkeyhint',
         'inputmode',
         'name',
-        'value'
+        'value',
     ];
-
 }

@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlMenu extends Element
 {
-
     protected $name = 'menu';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlMenu extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'type'
+        'type',
     ];
-
 }

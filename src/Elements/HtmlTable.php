@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlTable extends Element
 {
-
     protected $name = 'table';
 
     protected $availableAttributes = [
@@ -35,7 +33,6 @@ class HtmlTable extends Element
         'background',
         'bgcolor',
         'border',
-        'summary'
+        'summary',
     ];
-
 }

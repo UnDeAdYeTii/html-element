@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlTr extends Element
 {
-
     protected $name = 'tr';
 
     protected $availableAttributes = [
@@ -32,7 +30,6 @@ class HtmlTr extends Element
         'enterkeyhint',
         'inputmode',
         'align',
-        'bgcolor'
+        'bgcolor',
     ];
-
 }

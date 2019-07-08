@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSection extends Element
 {
-
     protected $name = 'section';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlSection extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

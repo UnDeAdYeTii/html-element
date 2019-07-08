@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlTime extends Element
 {
-
     protected $name = 'time';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlTime extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'datetime'
+        'datetime',
     ];
-
 }

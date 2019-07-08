@@ -4,11 +4,11 @@ namespace YeTii\HtmlElement\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use YeTii\HtmlElement\TextNode;
+use YeTii\HtmlElement\Elements\HtmlB;
 use YeTii\HtmlElement\Elements\HtmlDiv;
 use YeTii\HtmlElement\Elements\HtmlSpan;
 use YeTii\HtmlElement\Elements\HtmlInput;
 use YeTii\HtmlElement\Elements\HtmlTextarea;
-use YeTii\HtmlElement\Elements\HtmlB;
 
 final class ElementsTest extends TestCase
 {

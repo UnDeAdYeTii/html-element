@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlCanvas extends Element
 {
-
     protected $name = 'canvas';
 
     protected $availableAttributes = [
@@ -32,7 +30,6 @@ class HtmlCanvas extends Element
         'enterkeyhint',
         'inputmode',
         'height',
-        'width'
+        'width',
     ];
-
 }

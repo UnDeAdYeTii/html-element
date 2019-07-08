@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlTrack extends Element implements IsSingleton
 {
-
     protected $name = 'track';
 
     protected $availableAttributes = [
@@ -35,7 +34,6 @@ class HtmlTrack extends Element implements IsSingleton
         'kind',
         'label',
         'src',
-        'srclang'
+        'srclang',
     ];
-
 }

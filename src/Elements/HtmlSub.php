@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSub extends Element
 {
-
     protected $name = 'sub';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlSub extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

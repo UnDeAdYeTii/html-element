@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlCaption extends Element
 {
-
     protected $name = 'caption';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlCaption extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'align'
+        'align',
     ];
-
 }

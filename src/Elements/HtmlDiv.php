@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlDiv extends Element
 {
-
     protected $availableAttributes = [
         'accesskey',
         'autocapitalize',
@@ -28,7 +26,6 @@ class HtmlDiv extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

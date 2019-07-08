@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlCite extends Element
 {
-
     protected $name = 'cite';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlCite extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

@@ -104,7 +104,7 @@ class Element
             $name = str_replace('Html', '', substr($cl, strrpos($cl, '\\') + 1), $count);
             $this->setName(strtolower($name));
         }
-        
+
         return $this->name;
     }
 
@@ -134,10 +134,10 @@ class Element
     public function setAttribute(string $key, $value): self
     {
         if ($key === 'nodes' || $key === 'node') {
-            if (!is_array($value)) {
+            if (! is_array($value)) {
                 $value = [$value];
             }
-            
+
             return $this->addChildren($value);
         }
 
