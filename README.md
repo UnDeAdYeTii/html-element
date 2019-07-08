@@ -288,3 +288,28 @@ These interfaces change the way an element is rendered.
 - `YeTii\HtmlElement\Interfaces\HasTextChild` renders an element with children as text-only (e.g. `<textarea>text child here</textarea>`)
 - `YeTii\HtmlElement\Interfaces\IsSingleton` renders an element with no closing tag (e.g. `<input />`)
 - `YeTii\HtmlElement\Interfaces\IsTextNode` renders an element as a text node (i.e. raw or htmlspecialchar'd text)
+
+**Custom Elements:**
+
+You may want to create some custom elements, especially if generating something like vue component templates. Using the interfaces above, and extending the base `Element` class, it becomes a very easy task. Say you want an singleton element like `<dob-picker type="date" {customAttributesHere} />`
+
+```php
+<?php
+
+namespace YeTii\VueGenerator\Component;
+
+use YeTii\HtmlElement\Element;
+use YeTii\HtmlElement\Interfaces\IsSingleton;
+
+class DobPicker extends Element implements IsSingleton
+{
+
+    protected $name = 'dob-picker';
+
+    protected $attributes = [
+        'type' => 'date', // all <dob-pickers> should have this
+    ];
+
+}
+
+```
