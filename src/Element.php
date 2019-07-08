@@ -185,6 +185,19 @@ class Element
     }
 
     /**
+     * Render any given element in its entirety, escaping all direct child
+     * TextNodes with htmlspecialchars to prevent HTML-injection
+     *
+     * @return string
+     */
+    public function renderEscaped(): string
+    {
+        $this->escapeHtml(true);
+
+        return $this->render();
+    }
+
+    /**
      * Render any given element in its entirety.
      *
      * @return string
