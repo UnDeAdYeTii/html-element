@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Audio extends Element
 {
-
     protected $name = 'audio';
 
     protected $availableAttributes = [
@@ -37,7 +36,6 @@ class Audio extends Element
         'loop',
         'muted',
         'preload',
-        'src'
+        'src',
     ];
-
 }

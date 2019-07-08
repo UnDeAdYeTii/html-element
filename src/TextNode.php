@@ -1,19 +1,18 @@
 <?php
+
 namespace YeTii\HtmlElement;
 
-use YeTii\HtmlElement\Element;
 use YeTii\HtmlElement\Interfaces\IsTextNode;
 
 class TextNode extends Element implements IsTextNode
 {
-
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected $name = '#text';
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function set(array $args): Element
     {

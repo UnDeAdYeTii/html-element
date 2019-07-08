@@ -1,12 +1,12 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
-use YeTii\HtmlElement\Element;
 use YeTii\HtmlElement\Schema;
+use YeTii\HtmlElement\Element;
 
 class Var extends Element
 {
-
     protected $name = 'var';
 
     protected $availableAttributes = [
@@ -31,5 +31,4 @@ class Var extends Element
         'enterkeyhint',
         'inputmode'
     ];
-
 }

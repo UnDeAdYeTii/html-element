@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Legend extends Element
 {
-
     protected $name = 'legend';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class Legend extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Source extends Element implements IsSingleton
 {
-
     protected $name = 'source';
 
     protected $availableAttributes = [
@@ -34,7 +34,6 @@ class Source extends Element implements IsSingleton
         'sizes',
         'src',
         'srcset',
-        'type'
+        'type',
     ];
-
 }

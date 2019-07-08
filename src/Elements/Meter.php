@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Meter extends Element
 {
-
     protected $name = 'meter';
 
     protected $availableAttributes = [
@@ -36,7 +35,6 @@ class Meter extends Element
         'max',
         'min',
         'optimum',
-        'value'
+        'value',
     ];
-
 }

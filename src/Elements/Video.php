@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Video extends Element
 {
-
     protected $name = 'video';
 
     protected $availableAttributes = [
@@ -40,7 +39,6 @@ class Video extends Element
         'poster',
         'preload',
         'src',
-        'width'
+        'width',
     ];
-
 }

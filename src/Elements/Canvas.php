@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Canvas extends Element
 {
-
     protected $name = 'canvas';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Canvas extends Element
         'enterkeyhint',
         'inputmode',
         'height',
-        'width'
+        'width',
     ];
-
 }

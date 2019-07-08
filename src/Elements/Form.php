@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Form extends Element
 {
-
     protected $name = 'form';
 
     protected $availableAttributes = [
@@ -38,7 +37,6 @@ class Form extends Element
         'method',
         'name',
         'novalidate',
-        'target'
+        'target',
     ];
-
 }

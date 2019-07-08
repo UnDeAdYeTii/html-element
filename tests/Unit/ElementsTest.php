@@ -1,17 +1,17 @@
 <?php
+
 namespace YeTii\HtmlElement\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use YeTii\HtmlElement\Elements\B as Bold;
-use YeTii\HtmlElement\Elements\Div;
-use YeTii\HtmlElement\Elements\Input;
-use YeTii\HtmlElement\Elements\Span;
-use YeTii\HtmlElement\Elements\Textarea;
 use YeTii\HtmlElement\TextNode;
+use YeTii\HtmlElement\Elements\Div;
+use YeTii\HtmlElement\Elements\Span;
+use YeTii\HtmlElement\Elements\Input;
+use YeTii\HtmlElement\Elements\Textarea;
+use YeTii\HtmlElement\Elements\B as Bold;
 
 final class ElementsTest extends TestCase
 {
-
     /** @test */
     public function itCanRetrieveTheDefaultName(): void
     {
@@ -274,7 +274,7 @@ final class ElementsTest extends TestCase
     }
 
     /** @test */
-    public function excplitlyDisablingEscapingOfHtmlOnTextNodeIsRespected(): void
+    public function explicitlyDisablingEscapingOfHtmlOnTextNodeIsRespected(): void
     {
         $child2 = new TextNode([
             'node' => '<b>test2</b>',

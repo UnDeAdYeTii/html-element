@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Keygen extends Element implements IsSingleton
 {
-
     protected $name = 'keygen';
 
     protected $availableAttributes = [
@@ -35,7 +35,6 @@ class Keygen extends Element implements IsSingleton
         'disabled',
         'form',
         'keytype',
-        'name'
+        'name',
     ];
-
 }

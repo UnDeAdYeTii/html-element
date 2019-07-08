@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Iframe extends Element
 {
-
     protected $name = 'iframe';
 
     protected $availableAttributes = [
@@ -42,7 +40,6 @@ class Iframe extends Element
         'sandbox',
         'src',
         'srcdoc',
-        'width'
+        'width',
     ];
-
 }

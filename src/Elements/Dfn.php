@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Dfn extends Element
 {
-
     protected $name = 'dfn';
 
     protected $availableAttributes = [
@@ -29,7 +28,6 @@ class Dfn extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

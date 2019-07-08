@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Label extends Element
 {
-
     protected $name = 'label';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Label extends Element
         'enterkeyhint',
         'inputmode',
         'for',
-        'form'
+        'form',
     ];
-
 }

@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Output extends Element
 {
-
     protected $name = 'output';
 
     protected $availableAttributes = [
@@ -32,7 +31,6 @@ class Output extends Element
         'inputmode',
         'for',
         'form',
-        'name'
+        'name',
     ];
-
 }

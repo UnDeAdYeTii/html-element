@@ -1,12 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class Del extends Element
 {
-
     protected $name = 'del';
 
     protected $availableAttributes = [
@@ -31,7 +30,6 @@ class Del extends Element
         'enterkeyhint',
         'inputmode',
         'cite',
-        'datetime'
+        'datetime',
     ];
-
 }

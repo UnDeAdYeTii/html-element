@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
@@ -6,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class Area extends Element implements IsSingleton
 {
-
     protected $name = 'area';
 
     protected $availableAttributes = [
@@ -40,7 +40,6 @@ class Area extends Element implements IsSingleton
         'referrerpolicy',
         'rel',
         'shape',
-        'target'
+        'target',
     ];
-
 }

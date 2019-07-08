@@ -1,11 +1,11 @@
 <?php
+
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
 
 class A extends Element
 {
-
     protected $name = 'a';
 
     protected $availableAttributes = [
@@ -39,5 +39,4 @@ class A extends Element
         'shape',
         'target',
     ];
-
 }
