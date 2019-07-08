@@ -274,7 +274,7 @@ final class ElementsTest extends TestCase
     }
 
     /** @test */
-    public function excplitlyDisablingEscapingOfHtmlOnTextNodeIsRespected(): void
+    public function explicitlyDisablingEscapingOfHtmlOnTextNodeIsRespected(): void
     {
         $child2 = new TextNode([
             'node' => '<b>test2</b>',
