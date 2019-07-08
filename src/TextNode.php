@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Element;

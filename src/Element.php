@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement;
 
 use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
@@ -9,7 +10,6 @@ use YeTii\HtmlElement\TextNode;
 
 class Element
 {
-
     /**
      * Optional name for the element, should PHP class naming forbid the
      * element name. Defaults to the Element's PHP class name.
@@ -263,7 +263,8 @@ EOL;
      * Specify whether or not to render this Element's text nodes
      * are raw or htmlspecialchar'd
      *
-     * @param boolean $escape Enable or disable escaping of HTML?
+     * @param  bool  $escapeHtml
+     * @param  bool  $inheritFalse
      * @return Element
      */
     public function escapeHtml(bool $escapeHtml = true, $inheritFalse = false): Element
