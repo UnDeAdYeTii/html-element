@@ -1,4 +1,5 @@
 <?php
+
 namespace YeTii\HtmlElement\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
@@ -11,7 +12,6 @@ use YeTii\HtmlElement\TextNode;
 
 final class ElementsTest extends TestCase
 {
-
     /** @test */
     public function itCanRetrieveTheDefaultName(): void
     {
