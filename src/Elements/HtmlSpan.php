@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSpan extends Element
 {
-
     protected $name = 'span';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlSpan extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

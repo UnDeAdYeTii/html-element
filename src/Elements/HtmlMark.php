@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlMark extends Element
 {
-
     protected $name = 'mark';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlMark extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

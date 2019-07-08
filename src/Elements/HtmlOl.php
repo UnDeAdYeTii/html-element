@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlOl extends Element
 {
-
     protected $name = 'ol';
 
     protected $availableAttributes = [
@@ -32,7 +30,6 @@ class HtmlOl extends Element
         'enterkeyhint',
         'inputmode',
         'reversed',
-        'start'
+        'start',
     ];
-
 }

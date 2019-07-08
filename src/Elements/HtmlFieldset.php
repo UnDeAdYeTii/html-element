@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlFieldset extends Element
 {
-
     protected $name = 'fieldset';
 
     protected $availableAttributes = [
@@ -33,7 +31,6 @@ class HtmlFieldset extends Element
         'inputmode',
         'disabled',
         'form',
-        'name'
+        'name',
     ];
-
 }

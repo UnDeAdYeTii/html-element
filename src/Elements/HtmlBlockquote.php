@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlBlockquote extends Element
 {
-
     protected $name = 'blockquote';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlBlockquote extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'cite'
+        'cite',
     ];
-
 }

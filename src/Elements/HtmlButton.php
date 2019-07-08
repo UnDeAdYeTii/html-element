@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlButton extends Element
 {
-
     protected $name = 'button';
 
     protected $availableAttributes = [
@@ -41,7 +39,6 @@ class HtmlButton extends Element
         'formtarget',
         'name',
         'type',
-        'value'
+        'value',
     ];
-
 }

@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSamp extends Element
 {
-
     protected $name = 'samp';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlSamp extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

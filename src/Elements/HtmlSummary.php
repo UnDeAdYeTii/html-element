@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSummary extends Element
 {
-
     protected $name = 'summary';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlSummary extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

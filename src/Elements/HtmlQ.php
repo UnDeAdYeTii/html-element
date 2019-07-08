@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlQ extends Element
 {
-
     protected $name = 'q';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlQ extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'cite'
+        'cite',
     ];
-
 }

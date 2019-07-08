@@ -3,12 +3,10 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlInput extends Element implements IsSingleton
 {
-
     protected $name = 'input';
 
     protected $availableAttributes = [
@@ -63,7 +61,6 @@ class HtmlInput extends Element implements IsSingleton
         'type',
         'usemap',
         'value',
-        'width'
+        'width',
     ];
-
 }

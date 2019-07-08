@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlLi extends Element
 {
-
     protected $name = 'li';
 
     protected $availableAttributes = [
@@ -31,7 +29,6 @@ class HtmlLi extends Element
         'translate',
         'enterkeyhint',
         'inputmode',
-        'value'
+        'value',
     ];
-
 }

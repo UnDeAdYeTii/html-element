@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlAbbr extends Element
 {
-
     protected $name = 'abbr';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlAbbr extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

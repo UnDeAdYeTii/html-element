@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlProgress extends Element
 {
-
     protected $name = 'progress';
 
     protected $availableAttributes = [
@@ -33,7 +31,6 @@ class HtmlProgress extends Element
         'inputmode',
         'form',
         'max',
-        'value'
+        'value',
     ];
-
 }

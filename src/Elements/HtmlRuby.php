@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlRuby extends Element
 {
-
     protected $name = 'ruby';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlRuby extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

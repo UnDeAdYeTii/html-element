@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlUl extends Element
 {
-
     protected $name = 'ul';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlUl extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

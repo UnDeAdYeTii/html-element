@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlSelect extends Element
 {
-
     protected $name = 'select';
 
     protected $availableAttributes = [
@@ -38,6 +36,6 @@ class HtmlSelect extends Element
         'multiple',
         'name',
         'required',
-        'size'
+        'size',
     ];
 }

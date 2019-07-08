@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlLabel extends Element
 {
-
     protected $name = 'label';
 
     protected $availableAttributes = [
@@ -32,7 +30,6 @@ class HtmlLabel extends Element
         'enterkeyhint',
         'inputmode',
         'for',
-        'form'
+        'form',
     ];
-
 }

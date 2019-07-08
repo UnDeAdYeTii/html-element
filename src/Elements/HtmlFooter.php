@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlFooter extends Element
 {
-
     protected $name = 'footer';
 
     protected $availableAttributes = [
@@ -30,7 +28,6 @@ class HtmlFooter extends Element
         'title',
         'translate',
         'enterkeyhint',
-        'inputmode'
+        'inputmode',
     ];
-
 }

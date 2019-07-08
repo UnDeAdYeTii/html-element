@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlCommand extends Element implements IsSingleton
 {
-
     protected $name = 'command';
 
     protected $availableAttributes = [
@@ -35,7 +34,6 @@ class HtmlCommand extends Element implements IsSingleton
         'disabled',
         'icon',
         'radiogroup',
-        'type'
+        'type',
     ];
-
 }

@@ -3,11 +3,9 @@
 namespace YeTii\HtmlElement\Elements;
 
 use YeTii\HtmlElement\Element;
-use YeTii\HtmlElement\Schema;
 
 class HtmlObject extends Element
 {
-
     protected $name = 'object';
 
     protected $availableAttributes = [
@@ -38,7 +36,6 @@ class HtmlObject extends Element
         'name',
         'type',
         'usemap',
-        'width'
+        'width',
     ];
-
 }

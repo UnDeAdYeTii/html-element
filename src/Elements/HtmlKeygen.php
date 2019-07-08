@@ -7,7 +7,6 @@ use YeTii\HtmlElement\Interfaces\IsSingleton;
 
 class HtmlKeygen extends Element implements IsSingleton
 {
-
     protected $name = 'keygen';
 
     protected $availableAttributes = [
@@ -36,7 +35,6 @@ class HtmlKeygen extends Element implements IsSingleton
         'disabled',
         'form',
         'keytype',
-        'name'
+        'name',
     ];
-
 }
