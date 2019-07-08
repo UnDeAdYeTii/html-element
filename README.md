@@ -8,111 +8,7 @@ Provides a more robust alternative to generating HTML
 
 ### Usage
 
-The using is fairly simple. Firstly, you have the different `Element`s under the `YeTii\HtmlElement\Elements` namespace, for example a `<div>` element is `YeTii\HtmlElement\Elements\HtmlDiv`, an `<input>` element is `YeTii\HtmlElement\Elements\HtmlInput`, etc. This is except for the `YeTii\HtmlElement\TextNode`.
-
-**Full List:**
-
-- `<a>`: `HtmlA`
-- `<abbr>`: `HtmlAbbr`
-- `<address>`: `HtmlAddress`
-- `<area>`: `HtmlArea`
-- `<article>`: `HtmlArticle`
-- `<aside>`: `HtmlAside`
-- `<audio>`: `HtmlAudio`
-- `<b>`: `HtmlB`
-- `<bdi>`: `HtmlBdi`
-- `<bdo>`: `HtmlBdo`
-- `<blockquote>`: `HtmlBlockquote`
-- `<body>`: `HtmlBody`
-- `<br>`: `HtmlBr`
-- `<button>`: `HtmlButton`
-- `<canvas>`: `HtmlCanvas`
-- `<caption>`: `HtmlCaption`
-- `<cite>`: `HtmlCite`
-- `<code>`: `HtmlCode`
-- `<col>`: `HtmlCol`
-- `<colgroup>`: `HtmlColgroup`
-- `<command>`: `HtmlCommand`
-- `<datalist>`: `HtmlDatalist`
-- `<dd>`: `HtmlDd`
-- `<del>`: `HtmlDel`
-- `<details>`: `HtmlDetails`
-- `<dfn>`: `HtmlDfn`
-- `<div>`: `HtmlDiv`
-- `<dl>`: `HtmlDl`
-- `<dt>`: `HtmlDt`
-- `<em>`: `HtmlEm`
-- `<embed>`: `HtmlEmbed`
-- `<fieldset>`: `HtmlFieldset`
-- `<figcaption>`: `HtmlFigcaption`
-- `<figure>`: `HtmlFigure`
-- `<footer>`: `HtmlFooter`
-- `<form>`: `HtmlForm`
-- `<h1>`: `HtmlH1`
-- `<h2>`: `HtmlH2`
-- `<h3>`: `HtmlH3`
-- `<h4>`: `HtmlH4`
-- `<h5>`: `HtmlH5`
-- `<h6>`: `HtmlH6`
-- `<head>`: `HtmlHead`
-- `<header>`: `HtmlHeader`
-- `<hr>`: `HtmlHr`
-- `<html>`: `HtmlHtml`
-- `<i>`: `HtmlI`
-- `<iframe>`: `HtmlIframe`
-- `<img>`: `HtmlImg`
-- `<input>`: `HtmlInput`
-- `<ins>`: `HtmlIns`
-- `<kbd>`: `HtmlKbd`
-- `<keygen>`: `HtmlKeygen`
-- `<label>`: `HtmlLabel`
-- `<legend>`: `HtmlLegend`
-- `<li>`: `HtmlLi`
-- `<main>`: `HtmlMain`
-- `<map>`: `HtmlMap`
-- `<mark>`: `HtmlMark`
-- `<menu>`: `HtmlMenu`
-- `<meter>`: `HtmlMeter`
-- `<nav>`: `HtmlNav`
-- `<object>`: `HtmlObject`
-- `<ol>`: `HtmlOl`
-- `<optgroup>`: `HtmlOptgroup`
-- `<option>`: `HtmlOption`
-- `<output>`: `HtmlOutput`
-- `<p>`: `HtmlP`
-- `<param>`: `HtmlParam`
-- `<pre>`: `HtmlPre`
-- `<progress>`: `HtmlProgress`
-- `<q>`: `HtmlQ`
-- `<rp>`: `HtmlRp`
-- `<rt>`: `HtmlRt`
-- `<ruby>`: `HtmlRuby`
-- `<s>`: `HtmlS`
-- `<samp>`: `HtmlSamp`
-- `<section>`: `HtmlSection`
-- `<select>`: `HtmlSelect`
-- `<small>`: `HtmlSmall`
-- `<source>`: `HtmlSource`
-- `<span>`: `HtmlSpan`
-- `<strong>`: `HtmlStrong`
-- `<sub>`: `HtmlSub`
-- `<summary>`: `HtmlSummary`
-- `<sup>`: `HtmlSup`
-- `<table>`: `HtmlTable`
-- `<tbody>`: `HtmlTbody`
-- `<td>`: `HtmlTd`
-- `<textarea>`: `HtmlTextarea`
-- `<tfoot>`: `HtmlTfoot`
-- `<th>`: `HtmlTh`
-- `<thead>`: `HtmlThead`
-- `<time>`: `HtmlTime`
-- `<tr>`: `HtmlTr`
-- `<track>`: `HtmlTrack`
-- `<u>`: `HtmlU`
-- `<ul>`: `HtmlUl`
-- `<var>`: `HtmlVar`
-- `<video>`: `HtmlVideo`
-- `<wbr>`: `HtmlWbr`
+The using is fairly simple. Firstly, you have the different `Element`s under the `YeTii\HtmlElement\Elements` namespace, for example a `<div>` element is `YeTii\HtmlElement\Elements\HtmlDiv`, an `<input>` element is `YeTii\HtmlElement\Elements\HtmlInput`, etc. This is except for the `YeTii\HtmlElement\TextNode`. See below for full list of classes.
 
 **Basic Usage:**
 
@@ -280,6 +176,110 @@ $parent->escapeHtml(true);
 
 $parent->render(); // <div>&lt;b&gt;Text&lt;/b&gt;<i>Some text</i></div>
 ```
+
+**Full list of Element classes:**
+
+- `<a>`: `HtmlA`
+- `<abbr>`: `HtmlAbbr`
+- `<address>`: `HtmlAddress`
+- `<area>`: `HtmlArea`
+- `<article>`: `HtmlArticle`
+- `<aside>`: `HtmlAside`
+- `<audio>`: `HtmlAudio`
+- `<b>`: `HtmlB`
+- `<bdi>`: `HtmlBdi`
+- `<bdo>`: `HtmlBdo`
+- `<blockquote>`: `HtmlBlockquote`
+- `<body>`: `HtmlBody`
+- `<br>`: `HtmlBr`
+- `<button>`: `HtmlButton`
+- `<canvas>`: `HtmlCanvas`
+- `<caption>`: `HtmlCaption`
+- `<cite>`: `HtmlCite`
+- `<code>`: `HtmlCode`
+- `<col>`: `HtmlCol`
+- `<colgroup>`: `HtmlColgroup`
+- `<command>`: `HtmlCommand`
+- `<datalist>`: `HtmlDatalist`
+- `<dd>`: `HtmlDd`
+- `<del>`: `HtmlDel`
+- `<details>`: `HtmlDetails`
+- `<dfn>`: `HtmlDfn`
+- `<div>`: `HtmlDiv`
+- `<dl>`: `HtmlDl`
+- `<dt>`: `HtmlDt`
+- `<em>`: `HtmlEm`
+- `<embed>`: `HtmlEmbed`
+- `<fieldset>`: `HtmlFieldset`
+- `<figcaption>`: `HtmlFigcaption`
+- `<figure>`: `HtmlFigure`
+- `<footer>`: `HtmlFooter`
+- `<form>`: `HtmlForm`
+- `<h1>`: `HtmlH1`
+- `<h2>`: `HtmlH2`
+- `<h3>`: `HtmlH3`
+- `<h4>`: `HtmlH4`
+- `<h5>`: `HtmlH5`
+- `<h6>`: `HtmlH6`
+- `<head>`: `HtmlHead`
+- `<header>`: `HtmlHeader`
+- `<hr>`: `HtmlHr`
+- `<html>`: `HtmlHtml`
+- `<i>`: `HtmlI`
+- `<iframe>`: `HtmlIframe`
+- `<img>`: `HtmlImg`
+- `<input>`: `HtmlInput`
+- `<ins>`: `HtmlIns`
+- `<kbd>`: `HtmlKbd`
+- `<keygen>`: `HtmlKeygen`
+- `<label>`: `HtmlLabel`
+- `<legend>`: `HtmlLegend`
+- `<li>`: `HtmlLi`
+- `<main>`: `HtmlMain`
+- `<map>`: `HtmlMap`
+- `<mark>`: `HtmlMark`
+- `<menu>`: `HtmlMenu`
+- `<meter>`: `HtmlMeter`
+- `<nav>`: `HtmlNav`
+- `<object>`: `HtmlObject`
+- `<ol>`: `HtmlOl`
+- `<optgroup>`: `HtmlOptgroup`
+- `<option>`: `HtmlOption`
+- `<output>`: `HtmlOutput`
+- `<p>`: `HtmlP`
+- `<param>`: `HtmlParam`
+- `<pre>`: `HtmlPre`
+- `<progress>`: `HtmlProgress`
+- `<q>`: `HtmlQ`
+- `<rp>`: `HtmlRp`
+- `<rt>`: `HtmlRt`
+- `<ruby>`: `HtmlRuby`
+- `<s>`: `HtmlS`
+- `<samp>`: `HtmlSamp`
+- `<section>`: `HtmlSection`
+- `<select>`: `HtmlSelect`
+- `<small>`: `HtmlSmall`
+- `<source>`: `HtmlSource`
+- `<span>`: `HtmlSpan`
+- `<strong>`: `HtmlStrong`
+- `<sub>`: `HtmlSub`
+- `<summary>`: `HtmlSummary`
+- `<sup>`: `HtmlSup`
+- `<table>`: `HtmlTable`
+- `<tbody>`: `HtmlTbody`
+- `<td>`: `HtmlTd`
+- `<textarea>`: `HtmlTextarea`
+- `<tfoot>`: `HtmlTfoot`
+- `<th>`: `HtmlTh`
+- `<thead>`: `HtmlThead`
+- `<time>`: `HtmlTime`
+- `<tr>`: `HtmlTr`
+- `<track>`: `HtmlTrack`
+- `<u>`: `HtmlU`
+- `<ul>`: `HtmlUl`
+- `<var>`: `HtmlVar`
+- `<video>`: `HtmlVideo`
+- `<wbr>`: `HtmlWbr`
 
 **Interfaces:**
 
