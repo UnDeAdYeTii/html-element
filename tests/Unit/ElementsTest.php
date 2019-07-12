@@ -3,12 +3,13 @@
 namespace YeTii\HtmlElement\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use YeTii\HtmlElement\TextNode;
 use YeTii\HtmlElement\Elements\HtmlB;
 use YeTii\HtmlElement\Elements\HtmlDiv;
-use YeTii\HtmlElement\Elements\HtmlSpan;
 use YeTii\HtmlElement\Elements\HtmlInput;
+use YeTii\HtmlElement\Elements\HtmlSpan;
 use YeTii\HtmlElement\Elements\HtmlTextarea;
+use YeTii\HtmlElement\TextNode;
+use YeTii\HtmlElement\Element;
 
 final class ElementsTest extends TestCase
 {
@@ -293,5 +294,182 @@ final class ElementsTest extends TestCase
         $expected = '<div>&lt;i&gt;test&lt;/i&gt;<b>test2</b></div>';
 
         $this->assertEquals($expected, $div->render());
+    }
+
+    /** @test */
+    public function itCanRetrieveASubsectionOfAttributes(): void
+    {
+        $div = new HtmlDiv([
+            'id' => 'section',
+            'class' => 'class-name',
+            'data-test' => '5645',
+            'data-blah' => '34564657',
+        ]);
+
+        // Retrieves all by default
+        $this->assertEquals(['id', 'class', 'data-test', 'data-blah'], array_keys($div->getAttributes()));
+
+        // Retrieves subsection when specified
+        $this->assertEquals(['id', 'class'], array_keys($div->getAttributes(['id', 'class'])));
+    }
+
+    /** @test */
+    public function itCanGenerateAnArrayOfTheElements(): void
+    {
+        $child1 = new HtmlSpan([
+            'class' => 'test',
+            'nodes' => [
+                new HtmlSpan([
+                    'class' => 'span-here',
+                    'node' => 'what?',
+                ]),
+                new HtmlB([
+                    'title' => 'This is bold',
+                    'node' => 'Just text here',
+                ]),
+            ],
+        ]);
+        $child2 = new HtmlSpan([
+            'class' => 'test-node',
+            'nodes' => [
+                new HtmlSpan([
+                    'class' => 'a-class',
+                    'node' => 'who?',
+                ]),
+                new HtmlB([
+                    'title' => 'Bold text',
+                    'node' => 'Stuff here',
+                ]),
+            ],
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'section',
+            'class' => 'class-name',
+            'nodes' => [
+                $child1,
+                $child2,
+            ],
+        ]);
+
+        $toArray = $div->toArray();
+
+        $expected = [
+            'name' => 'div',
+            'attributes' => [
+                'id' => 'section',
+                'class' => 'class-name',
+            ],
+            'nodes' => [
+                [
+                    'name' => 'span',
+                    'attributes' => [
+                        'class' => 'test',
+                    ],
+                    'nodes' => [
+                        [
+                            'name' => 'span',
+                            'attributes' => [
+                                'class' => 'span-here',
+                            ],
+                            'nodes' => [
+                                [
+                                    'name' => '#text',
+                                    'attributes' => [],
+                                    'nodes' => [
+                                        'what?',
+                                    ],
+                                ],
+                            ],
+                        ], [
+                            'name' => 'b',
+                            'attributes' => [
+                                'title' => 'This is bold',
+                            ],
+                            'nodes' => [
+                                [
+                                    'name' => '#text',
+                                    'attributes' => [],
+                                    'nodes' => [
+                                        'Just text here',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ], [
+                    'name' => 'span',
+                    'attributes' => [
+                        'class' => 'test-node',
+                    ],
+                    'nodes' => [
+                        [
+                            'name' => 'span',
+                            'attributes' => [
+                                'class' => 'a-class',
+                            ],
+                            'nodes' => [
+                                [
+                                    'name' => '#text',
+                                    'attributes' => [],
+                                    'nodes' => [
+                                        'who?',
+                                    ],
+                                ],
+                            ],
+                        ], [
+                            'name' => 'b',
+                            'attributes' => [
+                                'title' => 'Bold text',
+                            ],
+                            'nodes' => [
+                                [
+                                    'name' => '#text',
+                                    'attributes' => [],
+                                    'nodes' => [
+                                        'Stuff here',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $this->assertEquals($expected, $toArray);
+    }
+
+    /** @test */
+    public function itCanCreateElementsFromAnArray(): void
+    {
+        $src = [
+            'name' => 'div',
+            'attributes' => [
+                'id' => 'test',
+                'class' => 'blah',
+            ],
+            'nodes' => [
+                [
+                    'name' => 'span',
+                    'attributes' => [
+                        'data-id' => '1',
+                        'title' => 'Test',
+                    ]
+                ],
+                [
+                    'name' => 'input',
+                    'attributes' => [
+                        'id' => 'singleton'
+                    ]
+                ]
+            ]
+        ];
+        
+        $el = Element::fromArray($src);
+
+        $expected = '<div id="test" class="blah"><span data-id="1" title="Test"></span><input id="singleton" /></div>';
+
+        $this->assertEquals($expected, $el->render());
     }
 }

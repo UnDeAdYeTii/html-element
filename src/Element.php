@@ -310,4 +310,84 @@ EOL;
 
         return $this;
     }
+
+    /**
+     * Dump this element and it's children into a parseable array
+     *
+     * @param  array $options Options for exporting
+     * @return array
+     */
+    public function toArray(array $options = null): array
+    {
+        $only = !empty($options['only']) ? (array) $options['only'] : null;
+
+        $element = [
+            'name' => $this->getName(),
+            'attributes' => $this->getAttributes($only),
+        ];
+
+        if (empty($options['children']) || $options['children']) {
+            $element['nodes'] = [];
+            if ($this instanceof TextNode) {
+                $element['nodes'] = $this->children;
+            } else {
+                foreach ($this->children as $child) {
+                    $element['nodes'][] = $child->toArray($options);
+                }
+            }
+        }
+
+        if (!empty($options['metadata']) && $options['metadata']) {
+            $element['_escapeHtml'] = $this->escapeHtml;
+        }
+
+        return $element;
+    }
+
+    /**
+     * Return all (or a subset of) the element's attributes
+     *
+     * @param array $only List of attributes to retrieve. Default: all
+     * @return array
+     */
+    public function getAttributes(array $only = null): array
+    {
+        if ($only === null || empty($only)) {
+            return $this->attributes;
+        }
+
+        $attributes = [];
+        foreach ($only as $key) {
+            $attributes[$key] = $this->attributes[$key] ?? null;
+        }
+
+        return $attributes;
+    }
+
+    /**
+     * Generate an Element instance from an array (such as one exported from `toArray()`)
+     *
+     * @param array $src
+     * @return Element
+     */
+    public static function fromArray(array $src): Element
+    {
+        $cl = 'YeTii\HtmlElement\Elements\Html' . ucfirst($src['name']);
+
+        $element = new $cl();
+        
+        $element->set($src['attributes']);
+
+        if (!empty($src['nodes'])) {
+            $children = [];
+
+            foreach ($src['nodes'] as $node) {
+                $children[] = self::fromArray($node);
+            }
+            
+            $element->addChildren($children);
+        }
+
+        return $element;
+    }
 }
