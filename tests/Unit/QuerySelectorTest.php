@@ -376,4 +376,197 @@ final class QuerySelectorTest extends TestCase
         $this->assertEquals(1, $q->count());
         $this->assertEquals($child1b, $q->first());
     }
+
+    /** @test */
+    public function itCanCorrectlyPerformMultipleFinds(): void
+    {
+        $child1bb = new HtmlB([
+            'id' => 'some-b-1',
+        ]);
+
+        $child2b = new HtmlB([
+            'id' => 'some-b-2',
+        ]);
+
+        $child1b = new HtmlSpan([
+            'id' => 'some-span1b',
+            'nodes' => [
+                $child1bb
+            ]
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'test-div',
+            'nodes' => [
+                new HtmlSpan([
+                    'id' => 'some-span1',
+                    'nodes' => [
+                        $child1b,
+                    ],
+                ]),
+                new HtmlSpan([
+                    'id' => 'some-span2',
+                    'nodes' => [
+                        $child2b
+                    ]
+                ]),
+                new HtmlSpan([
+                    'id' => 'some-span3',
+                ]),
+            ],
+        ]);
+
+        $q = new QuerySelector($div);
+
+        // Find all spans
+        $q->find('span');
+
+        $this->assertEquals(4, $q->count());
+
+        // Find a single span
+        $q->find('span > span, span b');
+
+        $this->assertEquals(3, $q->count());
+        $this->assertEquals($child1b, $q->get()[0]);
+        $this->assertEquals($child1bb, $q->get()[1]);
+        $this->assertEquals($child2b, $q->get()[2]);
+    }
+
+    /** @test */
+    public function itCanCorrectlyFindAnElementUsingIdShorthand(): void
+    {
+        $child1b = new HtmlB([
+            'id' => 'findMe',
+        ]);
+
+        $child1a = new HtmlSpan([
+            'id' => 'some-span1b',
+            'nodes' => [
+                $child1b
+            ]
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'test-div',
+            'nodes' => [
+                $child1a
+            ],
+        ]);
+
+        $q = new QuerySelector($div);
+
+        // Find all spans
+        $q->find('#findMe');
+
+        $this->assertEquals(1, $q->count());
+        $this->assertEquals($child1b, $q->first());
+    }
+
+    /** @test */
+    public function itCanCorrectlyFindAnElementUsingClassShorthand(): void
+    {
+        $child1b = new HtmlB([
+            'class' => 'findMe',
+        ]);
+
+        $child2b = new HtmlSpan([
+            'class' => 'findMe',
+        ]);
+
+        $child1a = new HtmlSpan([
+            'id' => 'some-span1b',
+            'nodes' => [
+                $child1b,
+                $child2b
+            ]
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'test-div',
+            'nodes' => [
+                $child1a
+            ],
+        ]);
+
+        $q = new QuerySelector($div);
+
+        // Find all spans
+        $q->find('.findMe');
+
+        $this->assertEquals(2, $q->count());
+        $this->assertEquals($child1b, $q->first());
+        $this->assertEquals($child2b, $q->last());
+    }
+
+    /** @test */
+    public function itCanRetrieveAdjacentSiblings(): void
+    {
+        $span2a = new HtmlSpan([
+            'id' => 'span-2a',
+        ]);
+        $span2b = new HtmlSpan([
+            'id' => 'span-2b',
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'test-div',
+            'nodes' => [
+                new HtmlSpan([
+                    'id' => 'span-1',
+                ]),
+                new HtmlB([
+                    'id' => 'b-1',
+                ]),
+                $span2a,
+                new HtmlB([
+                    'id' => 'b-2',
+                ]),
+                $span2b,
+            ],
+        ]);
+
+        $q = new QuerySelector($div);
+
+        // Get all <span>s directly after a <b>
+        $q->find('b + span');
+
+        $this->assertEquals(2, $q->count());
+        $this->assertEquals($span2a, $q->first());
+        $this->assertEquals($span2b, $q->last());
+    }
+
+    /** @test */
+    public function itCanRetrieveGeneralSiblings(): void
+    {
+        $span2a = new HtmlSpan([
+            'id' => 'span-2a',
+        ]);
+        $span2b = new HtmlSpan([
+            'id' => 'span-2b',
+        ]);
+
+        $div = new HtmlDiv([
+            'id' => 'test-div',
+            'nodes' => [
+                new HtmlSpan([
+                    'id' => 'span-1',
+                ]),
+                new HtmlB([
+                    'id' => 'b-1',
+                ]),
+                $span2a,
+                $span2b,
+            ],
+        ]);
+
+        $q = new QuerySelector($div);
+
+        // Get all <span>s after a <b>
+        $q->find('b ~ span');
+
+        $this->assertEquals(2, $q->count());
+        $this->assertEquals($span2a, $q->first());
+        $this->assertEquals($span2b, $q->last());
+    }
+
 }

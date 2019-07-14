@@ -47,12 +47,13 @@ class QuerySelector
     {
         $this->selectors = [];
 
-        foreach (explode(',', $selector) as $sel) {
-            $sel = preg_replace('/\s\s+/', ' ', $sel);
-            
-            $sel = trim($sel);
+        $selectors = preg_split('/(?!\B"[^"]*),(?![^"]*"\B)/', $selector, -1, PREG_SPLIT_NO_EMPTY);
 
+        foreach ($selectors as $sel) {
+            $sel = preg_replace('/\s\s+/', ' ', $sel);
+            $sel = preg_replace('/ (\+|\~) /', '$1', $sel);
             $sel = str_replace(' > ', ' >', $sel);
+            $sel = trim($sel);
 
             if (!empty($sel)) {
                 $this->selectors[] = $sel;
@@ -116,8 +117,6 @@ class QuerySelector
      */
     public function findSelector(array $selectors, Element $parent): void
     {
-        $attr = !empty($parent->getAttributes(['id'])['id']) ? '#' . $parent->getAttributes(['id'])['id'] : '';
-
         $found = [];
 
         // Get the next segment in the list of selector segments
@@ -129,11 +128,12 @@ class QuerySelector
         // Retrieve list of elements that match this segment
         $found = $this->findInElement($toFind, $parent);
 
-
         // If it's the final selector segment, add the $found items to matched array
         if ($isFinal && $found) {
             foreach ($found as $item) {
-                $this->matched[] = $item;
+                if (!in_array($item, $this->matched)) {
+                    $this->matched[] = $item;
+                }
             }
         } elseif ($found) {
             // If not final but elements were found
@@ -173,6 +173,51 @@ class QuerySelector
                 }
             }
         } else {
+            // If the selector has a ~ or + in it
+            if (strpos($toFind, '~') || strpos($toFind, '+')) {
+                $m = null;
+                // Check if it's not in quotes (i.e. attribute selector)
+                if (preg_match('/(?!\B"[^"]*)(\~|\+)(?![^"]*"\B)/', $toFind, $m)) {
+                    // Retrieve the parts
+                    $parts = preg_split('/(?!\B"[^"]*)(\~|\+)(?![^"]*"\B)/', $toFind, -1, PREG_SPLIT_NO_EMPTY);
+
+                    if (count($parts) == 2) {
+                        $sibling1Selector = $parts[0];
+                        $sibling2Selector = $parts[1];
+
+                        if ($m[1] == '~') {
+                            $children = $parent->getChildren();
+
+                            foreach ($children as $child) {
+                                if ($this->matchesSelector($sibling1Selector, $child)) {
+                                    foreach ($children as $sibling) {
+                                        if ($sibling->getIndex() > $child->getIndex()) {
+                                            if ($this->matchesSelector($sibling2Selector, $sibling)) {
+                                                $found[] = $sibling;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } else { // $m[1] == '+'
+                            $children = $parent->getChildren();
+
+                            foreach ($children as $child) {
+                                if ($this->matchesSelector($sibling1Selector, $child)) {
+                                    $sibling = $children[$child->getIndex() + 1] ?? null;
+                                    if ($sibling !== null && $this->matchesSelector($sibling2Selector, $sibling)) {
+                                        $found[] = $sibling;
+                                    }
+                                }
+                            }
+                        }
+
+                    } else {
+                        throw new \Exception('Invalid CSS selector: `' . $toFind . '`');
+                    }
+                }
+            }
+
             // Since it's asking for any child (incl recursive children), we'll firstly match the parent element
             if ($depth > 1 && $this->matchesSelector($toFind, $parent)) {
                 $found[] = $parent;
@@ -199,10 +244,22 @@ class QuerySelector
      */
     public function matchesSelector(string $find, Element $element): bool
     {
+        // Match universal selector
+        if ($find === '*') {
+            return true;
+        }
+
         $name = $element->getName();
 
-        // Attribute selector
-        if (substr($find, 0, 1) === '[') {
+        $ch1 = substr($find, 0, 1);
+
+        if ($ch1 === '#') { // Match ID selector
+            return $this->matchesSelector('[id="' . substr($find, 1) . '"]', $element);
+        } elseif ($ch1 === '.') { // Match Class selector
+            return $this->matchesClass(substr($find, 1), $element);
+        } elseif ($ch1 === ':') { // Match psuedo selectors
+            // 
+        } elseif ($ch1 === '[') { // Match attribute selectors
             $name = $find;
             $value = null;
             $condition = null;
@@ -263,6 +320,20 @@ class QuerySelector
         }
 
         return $attribute == $value;
+    }
+
+    /**
+     * Match an element with a class
+     *
+     * @param string $find
+     * @param Element $element
+     * @return boolean
+     */
+    public function matchesClass(string $find, Element $element): bool
+    {
+        $classes = explode(' ', (string) $element->getAttribute('class'));
+
+        return in_array($find, $classes);
     }
 
     /**

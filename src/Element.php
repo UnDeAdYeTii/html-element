@@ -55,12 +55,11 @@ class Element
     ];
 
     /**
-     * Indicator whether or not to render text contents as raw or
-     * htmlspecialchar'd. Null indicates inheritance, if applicable.
+     * The index of the element relative to its parent
      *
-     * @var bool
+     * @var int
      */
-    protected $escapeHtml = null;
+    protected $index = 0;
 
     /**
      * Create a new Element.
@@ -154,7 +153,7 @@ class Element
     /**
      * Append multiple elements to this element's child nodes.
      *
-     * @param array $children List of child elements
+     * @param array<int,Element> $children List of child elements
      * @return Element
      */
     public function addChildren(array $children): self
@@ -166,10 +165,23 @@ class Element
                 ]);
             }
 
-            $this->addChild($child);
+            $this->append($child);
         }
 
         return $this;
+    }
+
+    /**
+     * @deprecated 1.2 Use append() instead
+     * 
+     * Append an element to this element's child nodes.
+     *
+     * @param Element $child A child Element
+     * @return Element
+     */
+    public function addChild(Element $child): self
+    {
+        return $this->append($child);
     }
 
     /**
@@ -178,11 +190,52 @@ class Element
      * @param Element $child A child Element
      * @return Element
      */
-    public function addChild(self $child): self
+    public function append(Element $child): self
     {
         $this->children[] = $child;
+        $this->updateIndexes();
 
         return $this;
+    }
+
+    /**
+     * Prepend an element to this element's child nodes.
+     *
+     * @param Element $child A child Element
+     * @return Element
+     */
+    public function prepend(Element $child): self
+    {
+        array_unshift($this->children, $child);
+        $this->updateIndexes();
+
+        return $this;
+    }
+
+    /**
+     * Append this element to another element's child nodes.
+     *
+     * @param Element $parent The parent Element to be appended to
+     * @return Element
+     */
+    public function appendTo(Element $parent): self
+    {
+        $parent->append($this);
+
+        return $parent;
+    }
+
+    /**
+     * Prepend this element to another element's child nodes.
+     *
+     * @param Element $parent The parent Element to be prepended to
+     * @return Element
+     */
+    public function prependTo(Element $parent): self
+    {
+        $parent->prepend($this);
+
+        return $parent;
     }
 
     /**
@@ -192,6 +245,10 @@ class Element
      */
     public function getChildren(): array
     {
+        foreach ($this->children as $key => $child) {
+            $this->children[$key]->setIndex($key);
+        }
+
         return $this->children;
     }
 
@@ -376,6 +433,18 @@ EOL;
     }
 
     /**
+     * Retrieve a single attribute
+     *
+     * @param string $attribute
+     * @param mixed  $default
+     * @return mixed
+     */
+    public function getAttribute(string $attribute, $default = null)
+    {
+        return array_key_exists($attribute, $this->attributes) ? $this->attributes[$attribute] : $default;
+    }
+
+    /**
      * Generate an Element instance from an array (such as one exported from `toArray()`)
      *
      * @param array $src
@@ -402,11 +471,55 @@ EOL;
         return $element;
     }
 
-    public function find(string $selector)
+    /**
+     * Use a query selector to retrieve one or more child elements
+     *
+     * @param string $selector
+     * @return QuerySelector
+     */
+    public function find(string $selector): QuerySelector
     {
         $query = new QuerySelector($this);
 
         // div input[name^="name"]
         return $query->find($selector);
+    }
+
+    /**
+     * Update the indexes of each child
+     *
+     * @return void
+     */
+    private function updateIndexes(): void
+    {
+        $index = 0;
+        foreach ($this->children as $child) {
+            $child->setIndex($index);
+
+            $index++;
+        }
+    }
+
+    /**
+     * Set the index of the current Element
+     *
+     * @param integer $index
+     * @return self
+     */
+    public function setIndex(int $index): self
+    {
+        $this->index = $index;
+        
+        return $this;
+    }
+
+    /**
+     * Get the index of the current Element
+     *
+     * @return int
+     */
+    public function getIndex(): int
+    {
+        return $this->index;
     }
 }
