@@ -6,6 +6,7 @@ use YeTii\HtmlElement\Interfaces\IsTextNode;
 use YeTii\HtmlElement\Interfaces\IsSingleton;
 use YeTii\HtmlElement\Interfaces\HasTextChild;
 use YeTii\HtmlElement\Exceptions\InvalidAttributeException;
+use YeTii\HtmlElement\QuerySelector;
 
 class Element
 {
@@ -182,6 +183,16 @@ class Element
         $this->children[] = $child;
 
         return $this;
+    }
+
+    /**
+     * Retrieve the children as an array.
+     *
+     * @return array<int,Element>
+     */
+    public function getChildren(): array
+    {
+        return $this->children;
     }
 
     /**
@@ -389,5 +400,13 @@ EOL;
         }
 
         return $element;
+    }
+
+    public function find(string $selector)
+    {
+        $query = new QuerySelector($this);
+
+        // div input[name^="name"]
+        return $query->find($selector);
     }
 }
