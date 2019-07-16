@@ -30,5 +30,6 @@ class HtmlOptgroup extends Element
         'enterkeyhint',
         'inputmode',
         'disabled',
+        'label',
     ];
 }
